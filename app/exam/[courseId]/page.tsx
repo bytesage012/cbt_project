@@ -73,17 +73,16 @@ export default function ExamPage({ params }: { params: { courseId: string } }) {
     <div className="min-h-screen bg-navy flex flex-col">
 
       {/* Top bar */}
-      <div className="sticky top-0 z-40 bg-navy-mid/95 backdrop-blur-md border-b border-navy-border px-4 md:px-8 py-3 flex items-center justify-between gap-3">
-        {/* Left: course title + answered count */}
-        <div className="flex items-center gap-3 min-w-0">
-          <a href="/" className="text-muted hover:text-gold transition-colors flex-shrink-0">
+      <div className="sticky top-0 z-40 bg-navy-mid/95 backdrop-blur-md border-b border-navy-border px-3 sm:px-6 md:px-8 py-2.5 flex items-center justify-between gap-2 sm:gap-3">
+        {/* Left: home icon + progress */}
+        <div className="flex items-center gap-2 min-w-0">
+          <a href="/" className="text-muted hover:text-gold transition-colors flex-shrink-0" aria-label="Home">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </a>
-          <div className="h-4 w-px bg-navy-border hidden sm:block" />
-          <span className="text-offwhite-dim text-sm font-medium hidden sm:block truncate">Exam Session</span>
-          <span className="text-[0.6875rem] text-muted hidden md:block">
-            {answeredCount}/{questions.length} answered
+          <span className="text-[0.6875rem] text-muted font-semibold">
+            {answeredCount}/{questions.length}
           </span>
+          <span className="text-offwhite-dim text-xs font-medium hidden sm:block">answered</span>
         </div>
 
         {/* Center: timer */}
@@ -106,7 +105,7 @@ export default function ExamPage({ params }: { params: { courseId: string } }) {
         />
 
         {/* Prev / Next */}
-        <div className="flex items-center gap-3 mt-8 w-full max-w-2xl">
+        <div className="flex items-center gap-2 sm:gap-3 mt-6 sm:mt-8 w-full max-w-2xl">
           <button
             className="btn-secondary flex-1 disabled:opacity-30"
             disabled={currentIdx === 0}

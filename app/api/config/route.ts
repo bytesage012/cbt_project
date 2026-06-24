@@ -18,3 +18,11 @@ export async function POST(request: Request) {
   });
   return NextResponse.json(upserted);
 }
+
+export async function DELETE(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const key = searchParams.get('key');
+  if (!key) return NextResponse.json({ error: 'Key required' }, { status: 400 });
+  await prisma.config.delete({ where: { key } });
+  return NextResponse.json({ deleted: true });
+}

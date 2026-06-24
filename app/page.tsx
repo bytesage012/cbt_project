@@ -23,14 +23,14 @@ export default async function HomePage() {
 
   return (
     <>
-      <main className="flex-1 bg-navy px-6 py-12 md:px-10 lg:px-16">
+      <main className="flex-1 bg-navy px-4 sm:px-6 py-8 sm:py-12 md:px-10 lg:px-16">
 
         {/* Hero */}
         <section className="mb-16 max-w-3xl mx-auto text-center">
           <p className="section-label justify-center mb-5" style={{ gap: "0.75rem" }}>
             <span style={{ flex: "none", background: "none" }}>Your Exam Platform</span>
           </p>
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-offwhite mb-5 leading-[1.08]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl md:text-6xl font-bold tracking-tight text-offwhite mb-5 leading-[1.08]">
             Study smarter,{" "}
             <span
               className="text-gold"
@@ -47,7 +47,7 @@ export default async function HomePage() {
 
           {/* Quick stats bar */}
           {subjects.length > 0 && (
-            <div className="mt-8 inline-flex items-center gap-6 px-6 py-3 rounded-xl bg-navy-surface border border-navy-border">
+            <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-4 sm:px-6 py-3 rounded-xl bg-navy-surface border border-navy-border">
               <div className="text-center">
                 <p className="text-xl font-bold text-offwhite">{subjects.length}</p>
                 <p className="text-2xs text-muted uppercase tracking-wide mt-0.5">Subjects</p>

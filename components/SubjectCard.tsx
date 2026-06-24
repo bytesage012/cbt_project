@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import DeleteButton from "@/components/DeleteButton";
 
 type SubjectCardProps = {
   id: string;
@@ -63,6 +64,22 @@ export default function SubjectCard({ id, name, description, _count }: SubjectCa
         <span className="flex items-center gap-1 text-gold text-xs font-semibold opacity-0 group-hover:opacity-100 transition-all duration-150 translate-x-1 group-hover:translate-x-0">
           Explore <ArrowIcon />
         </span>
+      </div>
+
+      {/* Delete — revealed on hover, stops card navigation */}
+      <div
+        className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <DeleteButton
+          label={name}
+          iconOnly
+          onConfirm={async () => {
+            await fetch(`/api/subjects/${id}`, { method: "DELETE" });
+            router.push("/");
+            router.refresh();
+          }}
+        />
       </div>
     </div>
   );

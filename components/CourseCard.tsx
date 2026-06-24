@@ -1,12 +1,15 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import DeleteButton from "@/components/DeleteButton";
 
 type CourseCardProps = {
   id: string;
   name: string;
   description: string;
   _count: { questions: number };
+  /** If provided, shows a delete button on the card */
+  onDelete?: () => Promise<void>;
 };
 
 const PlayIcon = () => (
@@ -25,7 +28,7 @@ const FileIcon = () => (
   </svg>
 );
 
-export default function CourseCard({ id, name, description, _count }: CourseCardProps) {
+export default function CourseCard({ id, name, description, _count, onDelete }: CourseCardProps) {
   const router = useRouter();
 
   return (
@@ -67,6 +70,20 @@ export default function CourseCard({ id, name, description, _count }: CourseCard
           <PlayIcon /> Start Exam
         </span>
       </div>
+
+      {/* Delete — revealed on hover, stops card navigation */}
+      {onDelete && (
+        <div
+          className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <DeleteButton
+            label={name}
+            iconOnly
+            onConfirm={onDelete}
+          />
+        </div>
+      )}
     </div>
   );
 }

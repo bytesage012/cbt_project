@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import type { Question } from "@/lib/types";
+import DeleteButton from "@/components/DeleteButton";
 
 type QuestionTableProps = {
   questions: Question[];
@@ -105,12 +106,11 @@ export default function QuestionTable({ questions, onDelete, onEdit }: QuestionT
                         >
                           Edit
                         </button>
-                        <button
-                          className="px-2.5 py-1.5 rounded-md text-danger hover:bg-danger/10 text-xs font-semibold transition-colors duration-100"
-                          onClick={() => onDelete(String(q.id))}
-                        >
-                          Del
-                        </button>
+                        <DeleteButton
+                          label={q.prompt.slice(0, 40) + (q.prompt.length > 40 ? "…" : "")}
+                          iconOnly
+                          onConfirm={async () => onDelete(String(q.id))}
+                        />
                       </div>
                     </td>
                   </tr>

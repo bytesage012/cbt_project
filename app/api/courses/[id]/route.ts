@@ -23,6 +23,13 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
 
 export async function DELETE(request: Request, context: { params: Promise<{ id: string }> }) {
   const { id } = await context.params;
-  await prisma.course.delete({ where: { id: Number(id) } });
-  return NextResponse.json({ success: true });
+  const courseId = Number(id);
+
+  // Delete all questions in the course first
+  await prisma.question.deleteMany({ where: { courseId } });
+
+  // Delete the course
+  await prisma.course.delete({ where: { id: courseId } });
+
+  return NextResponse.json({ deleted: true });
 }

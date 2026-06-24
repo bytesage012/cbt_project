@@ -71,7 +71,7 @@ export default function ScoreCard({ total, correct, timeTaken, results }: ScoreC
           </span>
 
           {/* Stats */}
-          <div className="grid grid-cols-4 gap-2 mt-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4">
             {[
               { label: "Total",   value: String(total),   color: "text-offwhite" },
               { label: "Correct", value: String(correct), color: "text-success"  },
@@ -121,7 +121,7 @@ export default function ScoreCard({ total, correct, timeTaken, results }: ScoreC
               ))}
             </div>
 
-            <ul className="divide-y divide-navy-border max-h-72 overflow-y-auto">
+            <ul className="divide-y divide-navy-border max-h-60 sm:max-h-72 overflow-y-auto">
               {filteredResults.map((r, i) => {
                 const options    = JSON.parse(r.question.options) as string[];
                 const correctIdx = r.question.answer ? optionLabels.indexOf(r.question.answer as any) : -1;
