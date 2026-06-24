@@ -1,0 +1,376 @@
+=== app/courses/[id]/page.tsx ===
+"use client";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import Header from "@/components/Header";
+import BulkUploader from "@/components/BulkUploader";
+import QuestionTable from "@/components/QuestionTable";
+import QuestionForm from "@/components/QuestionForm";
+import type { Question } from "@/lib/types";
+
+type Course = {
+  id: string;
+  title: string;
+  subjectId: number;
+};
+
+export const dynamic = "force-dynamic";
+
+export default function CoursePage({ params }: { params: { id: string } }) {
+  const [questions, setQuestions]     = useState<Question[]>([]);
+  const [showForm, setShowForm]       = useState(false);
+  const [editQuestion, setEditQuestion] = useState<Question | undefined>();
+  const [showUploader, setShowUploader] = useState(false);
+  const [course, setCourse]           = useState<Course | null>(null);
+
+  useEffect(() => {
+    const load = async () => {
+      const [cRes, qRes] = await Promise.all([
+        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/courses/${params.id}`),
+        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/questions?courseId=${params.id}`),
+      ]);
+      setCourse(await cRes.json());
+      setQuestions(await qRes.json());
+    };
+    load();
+  }, [params.id]);
+
+  const refresh = async () => {
+    const qRes = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/questions?courseId=${params.id}`
+    );
+    setQuestions(await qRes.json());
+  };
+
+  const handleDelete = async (id: string) => {
+    await fetch(`/api/questions/${id}`, { method: "DELETE" });
+    refresh();
+  };
+
+  const handleEdit = (q: Question) => {
+    setEditQuestion(q);
+    setShowForm(true);
+  };
+
+  return (
+    <>
+      <Header />
+      <main className="flex-1 bg-navy px-6 py-10 md:px-10 lg:px-16">
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-2 text-sm text-muted mb-8">
+          <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+          <span>/</span>
+          <span className="text-offwhite">{course?.title ?? "Course"}</span>
+        </nav>
+
+        {/* Heading + action bar */}
+        <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight text-offwhite mb-1">
+              {course?.title ?? "Loading…"}
+            </h1>
+            <p className="text-muted text-sm">
+              {questions.length} question{questions.length !== 1 ? "s" : ""} in this course
+            </p>
+          </div>
+
+          {/* Actions */}
+          <div className="flex flex-wrap items-center gap-3">
+            <button className="btn-primary" onClick={() => { setEditQuestion(undefined); setShowForm(true); }}>
+              + Add Question
+            </button>
+            <button className="btn-secondary" onClick={() => setShowUploader(true)}>
+              ↑ Upload Questions
+            </button>
+            <a href={`/exam/${params.id}`} className="btn-secondary text-gold border-gold hover:bg-gold/10">
+              Start Exam →
+            </a>
+          </div>
+        </div>
+
+        {/* Question table */}
+        <QuestionTable
+          questions={questions}
+          onDelete={handleDelete}
+          onEdit={handleEdit}
+        />
+      </main>
+
+      {/* Modal: Question form */}
+      {showForm && (
+        <div className="fixed inset-0 bg-navy/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-navy-surface border border-navy-border rounded-2xl p-6 w-full max-w-lg animate-slide-up">
+            <QuestionForm
+              courseId={params.id}
+              question={editQuestion}
+              onSuccess={() => { setShowForm(false); setEditQuestion(undefined); refresh(); }}
+              onCancel={() => { setShowForm(false); setEditQuestion(undefined); }}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Modal: Bulk uploader */}
+      {showUploader && (
+        <div className="fixed inset-0 bg-navy/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-navy-surface border border-navy-border rounded-2xl p-6 w-full max-w-lg animate-slide-up">
+            <div className="flex items-center justify-between mb-5">
+              <h2 className="text-lg font-bold text-offwhite">Upload Questions</h2>
+              <button
+                className="text-muted hover:text-offwhite transition-colors text-xl"
+                onClick={() => setShowUploader(false)}
+                aria-label="Close"
+              >
+                ×
+              </button>
+            </div>
+            <BulkUploader
+              courseId={params.id}
+              onSuccess={() => { setShowUploader(false); refresh(); }}
+            />
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+=== app/exam/[courseId]/page.tsx ===
+"use client";
+import React, { useEffect, useState, useCallback } from "react";
+import ExamTimer from "@/components/ExamTimer";
+import ExamQuestion from "@/components/ExamQuestion";
+import ScoreCard from "@/components/ScoreCard";
+import type { Question } from "@/lib/types";
+
+export default function ExamPage({ params }: { params: { courseId: string } }) {
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [answers, setAnswers]       = useState<Record<number, string>>({});
+  const [duration, setDuration]     = useState(30 * 60);
+  const [finished, setFinished]     = useState(false);
+  const [timeTaken, setTimeTaken]   = useState(0);
+  const [startTime]                 = useState(() => Date.now());
+
+  useEffect(() => {
+    const loadConfig = async () => {
+      const res = await fetch("/api/config");
+      const cfg = await res.json();
+      const dur = cfg.find((c: any) => c.key === "examDurationMinutes");
+      if (dur?.value) setDuration(Number(dur.value) * 60);
+    };
+    loadConfig();
+  }, []);
+
+  useEffect(() => {
+    const load = async () => {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/questions?courseId=${params.courseId}`
+      );
+      setQuestions(await res.json());
+    };
+    load();
+  }, [params.courseId]);
+
+  const handleAnswer = (ans: string) => {
+    setAnswers((prev) => ({ ...prev, [questions[currentIdx].id]: ans }));
+  };
+
+  const submit = useCallback(() => {
+    setTimeTaken(Math.round((Date.now() - startTime) / 1000));
+    setFinished(true);
+  }, [startTime]);
+
+  if (questions.length === 0) {
+    return (
+      <div className="min-h-screen bg-navy flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-10 h-10 border-2 border-gold border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-muted text-sm">Loading questions…</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (finished) {
+    const correct = questions.filter((q) => answers[q.id] === q.answer).length;
+    const results = questions.map((q) => ({ question: q, userAnswer: answers[q.id] ?? null }));
+    return (
+      <ScoreCard
+        total={questions.length}
+        correct={correct}
+        timeTaken={timeTaken}
+        results={results}
+      />
+    );
+  }
+
+  const answeredCount = Object.keys(answers).length;
+
+  return (
+    <div className="min-h-screen bg-navy flex flex-col">
+      {/* Top bar */}
+      <div className="sticky top-0 z-40 bg-navy-surface border-b border-navy-border px-6 py-3 flex items-center justify-between">
+        <span className="text-offwhite font-semibold text-sm truncate max-w-xs">
+          {/* course title placeholder */}
+          Exam Session
+        </span>
+        <ExamTimer durationSeconds={duration} onTimeUp={submit} />
+        <button
+          className="btn-primary text-xs py-1.5 px-4"
+          onClick={submit}
+        >
+          Submit Exam
+        </button>
+      </div>
+
+      {/* Question area */}
+      <div className="flex-1 flex flex-col items-center justify-center px-6 py-10">
+        <ExamQuestion
+          question={questions[currentIdx]}
+          questionNumber={currentIdx + 1}
+          total={questions.length}
+          selectedAnswer={answers[questions[currentIdx].id] ?? null}
+          onAnswer={handleAnswer}
+        />
+
+        {/* Prev / Next navigation */}
+        <div className="flex items-center gap-4 mt-8">
+          <button
+            className="btn-secondary text-sm py-2 px-5 disabled:opacity-30"
+            disabled={currentIdx === 0}
+            onClick={() => setCurrentIdx((i) => i - 1)}
+          >
+            ← Previous
+          </button>
+          {currentIdx < questions.length - 1 ? (
+            <button
+              className="btn-primary text-sm py-2 px-5"
+              onClick={() => setCurrentIdx((i) => i + 1)}
+            >
+              Next →
+            </button>
+          ) : (
+            <button className="btn-primary text-sm py-2 px-5" onClick={submit}>
+              Finish →
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Question navigation dots */}
+      <div className="pb-8 px-6">
+        <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
+          {questions.map((q, i) => {
+            const isAnswered = answers[q.id] !== undefined;
+            const isCurrent  = i === currentIdx;
+            return (
+              <button
+                key={q.id}
+                onClick={() => setCurrentIdx(i)}
+                aria-label={`Go to question ${i + 1}`}
+                className={`w-8 h-8 text-xs font-semibold rounded-lg border transition-all duration-150 ${
+                  isCurrent
+                    ? "bg-gold text-navy border-gold"
+                    : isAnswered
+                    ? "bg-gold/20 text-gold border-gold/40"
+                    : "bg-navy-surface text-muted border-navy-border hover:border-gold/40"
+                }`}
+              >
+                {i + 1}
+              </button>
+            );
+          })}
+        </div>
+        <p className="text-center text-xs text-muted mt-3">
+          {answeredCount} of {questions.length} answered
+        </p>
+      </div>
+    </div>
+  );
+}
+
+=== app/subjects/[id]/page.tsx ===
+import React from "react";
+import Link from "next/link";
+import Header from "@/components/Header";
+import CourseCard from "@/components/CourseCard";
+import AddCourseForm from "@/components/AddCourseForm";
+
+type Course = {
+  id: string;
+  name: string;
+  description: string;
+  _count: { questions: number };
+};
+
+type Subject = {
+  id: string;
+  name: string;
+  description: string;
+  courses: Course[];
+};
+
+export const dynamic = "force-dynamic";
+
+export default async function SubjectPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/subjects/${id}`
+  );
+  const subject: Subject = await res.json();
+
+  return (
+    <>
+      <Header />
+      <main className="flex-1 bg-navy px-6 py-10 md:px-10 lg:px-16">
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-2 text-sm text-muted mb-8">
+          <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+          <span>/</span>
+          <span className="text-offwhite">{subject.name}</span>
+        </nav>
+
+        {/* Heading */}
+        <div className="mb-10">
+          <h1 className="text-4xl font-bold tracking-tight text-offwhite mb-2">
+            {subject.name}
+          </h1>
+          {subject.description && (
+            <p className="text-muted text-base max-w-2xl leading-relaxed">
+              {subject.description}
+            </p>
+          )}
+        </div>
+
+        {/* Courses grid */}
+        {subject.courses.length === 0 ? (
+          <div className="text-center py-20">
+            <p className="text-5xl mb-4">📖</p>
+            <p className="text-offwhite font-semibold text-lg mb-1">No courses yet</p>
+            <p className="text-muted text-sm">Add your first course to this subject.</p>
+          </div>
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl">
+            {subject.courses.map((c) => (
+              <CourseCard
+                key={c.id}
+                id={c.id}
+                name={c.name}
+                description={c.description}
+                _count={c._count}
+              />
+            ))}
+          </div>
+        )}
+
+        <AddCourseForm subjectId={subject.id} />
+      </main>
+    </>
+  );
+}
+

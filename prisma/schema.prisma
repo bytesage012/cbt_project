@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Subject {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  courses   Course[]
+}
+
+model Course {
+  id          Int      @id @default(autoincrement())
+  title       String
+  subjectId   Int
+  subject     Subject  @relation(fields: [subjectId], references: [id])
+  questions   Question[]
+}
+
+model Question {
+  id          Int      @id @default(autoincrement())
+  prompt      String
+  options     String   // JSON array of options
+  answer      String?
+  courseId    Int
+  course      Course   @relation(fields: [courseId], references: [id])
+  difficulty  String   @default("easy")
+}
+
+model Config {
+  key   String @id
+  value String
+}

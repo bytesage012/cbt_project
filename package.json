@@ -1,0 +1,42 @@
+{
+  "name": "nextjs_bootstrap_template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest",
+    "migrate": "npx prisma migrate dev --name init",
+    "prepare": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^5",
+    "multer": "^1",
+    "next": "16.2.9",
+    "next-connect": "^1",
+    "prisma": "^5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sqlite3": "^5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6",
+    "@testing-library/react": "^14",
+    "@testing-library/user-event": "^14",
+    "@types/jest": "^29",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/supertest": "^7.2.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "jest": "^29",
+    "jest-environment-jsdom": "^30.4.1",
+    "supertest": "^6",
+    "tailwindcss": "^4",
+    "ts-jest": "^29",
+    "typescript": "^5"
+  }
+}

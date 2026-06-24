@@ -1,0 +1,322 @@
+=== app/globals.css ===
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────── */
+:root {
+  --navy:         #0A1628;
+  --surface:      #112240;
+  --deep:         #0D1F3C;
+  --border:       #1E3A5F;
+  --gold:         #C9A84C;
+  --gold-dark:    #B8943D;
+  --gold-light:   #D4B86A;
+  --offwhite:     #F8F7F4;
+  --muted:        #8892A4;
+}
+
+/* ─── Base ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--navy);
+  color: var(--offwhite);
+  font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* ─── Text Selection ─────────────────────────────── */
+::selection {
+  background-color: rgba(201, 168, 76, 0.3);
+  color: var(--offwhite);
+}
+
+/* ─── Custom Scrollbar ───────────────────────────── */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: var(--navy); }
+::-webkit-scrollbar-thumb  { background: var(--gold-dark); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ─── Utility: Card ──────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  box-shadow: 0 8px 32px rgba(201, 168, 76, 0.08);
+}
+
+/* ─── Utility: Buttons ───────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  text-decoration: none;
+}
+.btn-primary:hover  { background: var(--gold-dark); }
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+}
+.btn-secondary:hover { background: rgba(201, 168, 76, 0.1); }
+
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  cursor: pointer;
+  transition: background 0.15s;
+  text-decoration: none;
+}
+.btn-danger:hover { background: rgba(239, 68, 68, 0.28); }
+
+/* ─── Utility: Input ─────────────────────────────── */
+.input {
+  background: var(--deep);
+  border: 1px solid var(--border);
+  color: var(--offwhite);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.input::placeholder { color: var(--muted); }
+.input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+}
+
+/* ─── Utility: Badge ─────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(201, 168, 76, 0.15);
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.badge-green {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.badge-red {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+.badge-gold {
+  background: rgba(201, 168, 76, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+=== app/layout.tsx ===
+import type { Metadata } from "next";
+import { Inter, DM_Sans } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "CBT Prep Hub — Master Your Exams",
+  description:
+    "A premium computer-based test preparation platform. Practice questions, track progress, and ace your exams.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`${inter.variable} ${dmSans.variable} h-full`}
+    >
+      <body className="min-h-full flex flex-col bg-navy text-offwhite antialiased">
+        {children}
+      </body>
+    </html>
+  );
+}
+
+=== app/page.tsx ===
+import React from "react";
+import Header from "@/components/Header";
+import SubjectCard from "@/components/SubjectCard";
+import AddSubjectForm from "@/components/AddSubjectForm";
+
+type Subject = {
+  id: string;
+  name: string;
+  description: string;
+  _count: { courses: number };
+};
+
+export const dynamic = "force-dynamic";
+
+export const metadata = {
+  title: "CBT Prep Hub — Choose a Subject",
+  description: "Select a subject to browse courses and start practising exam questions.",
+};
+
+export default async function HomePage() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/subjects`);
+  const subjects: Subject[] = await res.json();
+
+  return (
+    <>
+      <Header />
+      <main className="flex-1 bg-navy px-6 py-12 md:px-10 lg:px-16">
+        {/* Hero */}
+        <section className="text-center mb-14 max-w-2xl mx-auto">
+          <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-3">
+            Your Exam Platform
+          </p>
+          <h1 className="text-5xl font-bold tracking-tight text-offwhite mb-4 leading-tight">
+            Welcome to{" "}
+            <span className="text-gold">CBT Prep Hub</span>
+          </h1>
+          <p className="text-muted text-lg leading-relaxed">
+            Choose a subject below, browse its courses, and start practising
+            with real exam-style questions.
+          </p>
+        </section>
+
+        {/* Subjects grid */}
+        {subjects.length === 0 ? (
+          <div className="text-center py-20">
+            <p className="text-5xl mb-4">📚</p>
+            <p className="text-offwhite font-semibold text-lg mb-1">No subjects yet</p>
+            <p className="text-muted text-sm">Add your first subject to get started.</p>
+          </div>
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            {subjects.map((s) => (
+              <SubjectCard
+                key={s.id}
+                id={s.id}
+                name={s.name}
+                description={s.description}
+                _count={s._count}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Add Subject */}
+        <AddSubjectForm />
+      </main>
+    </>
+  );
+}
+
+=== tailwind.config.js ===
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'class',
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        navy: {
+          DEFAULT: '#0A1628',
+          surface: '#112240',
+          border: '#1E3A5F',
+          deep: '#0D1F3C',
+        },
+        gold: {
+          DEFAULT: '#C9A84C',
+          dark: '#B8943D',
+          light: '#D4B86A',
+        },
+        offwhite: '#F8F7F4',
+        muted: '#8892A4',
+      },
+      fontFamily: {
+        sans: ['DM Sans', 'Inter', 'system-ui', 'sans-serif'],
+        heading: ['DM Sans', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        '2xl': '1rem',
+        '3xl': '1.5rem',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.3s ease-in-out',
+        'slide-up': 'slideUp 0.25s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(12px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+
