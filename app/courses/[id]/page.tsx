@@ -20,8 +20,9 @@ const XIcon = () => (
   </svg>
 );
 
-export default function CoursePage({ params }: { params: { id: string } }) {
+export default function CoursePage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter();
+  const paramsUnwrapped = React.use(params);
   const [questions, setQuestions]       = useState<Question[]>([]);
   const [showForm, setShowForm]         = useState(false);
   const [editQuestion, setEditQuestion] = useState<Question | undefined>();
@@ -31,17 +32,17 @@ export default function CoursePage({ params }: { params: { id: string } }) {
   useEffect(() => {
     const load = async () => {
       const [cRes, qRes] = await Promise.all([
-        fetch(`/api/courses/${params.id}`),
-        fetch(`/api/questions?courseId=${params.id}`),
+        fetch(`/api/courses/${paramsUnwrapped.id}`),
+        fetch(`/api/questions?courseId=${paramsUnwrapped.id}`),
       ]);
       setCourse(await cRes.json());
       setQuestions(await qRes.json());
     };
     load();
-  }, [params.id]);
+  }, [paramsUnwrapped.id]);
 
   const refresh = async () => {
-    const qRes = await fetch(`/api/questions?courseId=${params.id}`);
+    const qRes = await fetch(`/api/questions?courseId=${paramsUnwrapped.id}`);
     setQuestions(await qRes.json());
   };
 
@@ -51,7 +52,7 @@ export default function CoursePage({ params }: { params: { id: string } }) {
   };
 
   const handleDeleteCourse = async () => {
-    await fetch(`/api/courses/${params.id}`, { method: "DELETE" });
+    await fetch(`/api/courses/${paramsUnwrapped.id}`, { method: "DELETE" });
     // Navigate to the subject page (or home if no subjectId)
     if (course?.subjectId) {
       router.push(`/subjects/${course.subjectId}`);
@@ -116,7 +117,7 @@ export default function CoursePage({ params }: { params: { id: string } }) {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               Upload
             </button>
-            <a href={`/exam/${params.id}`} className="btn-primary text-sm">
+            <a href={`/exam/${paramsUnwrapped.id}`} className="btn-primary text-sm">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               Start Exam
             </a>
@@ -138,7 +139,7 @@ export default function CoursePage({ params }: { params: { id: string } }) {
         <div className="fixed inset-0 bg-navy/85 backdrop-blur-sm flex items-end sm:items-center justify-center z-50 p-0 sm:p-4 animate-fade-in">
           <div className="bg-navy-surface border border-navy-border rounded-t-2xl sm:rounded-xl p-5 sm:p-6 w-full sm:max-w-lg animate-scale-in shadow-modal max-h-[90vh] overflow-y-auto">
             <QuestionForm
-              courseId={params.id}
+              courseId={paramsUnwrapped.id}
               question={editQuestion}
               onSuccess={() => { closeForm(); refresh(); }}
               onCancel={closeForm}

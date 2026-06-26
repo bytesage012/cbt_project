@@ -5,7 +5,8 @@ import ExamQuestion from "@/components/ExamQuestion";
 import ScoreCard from "@/components/ScoreCard";
 import type { Question } from "@/lib/types";
 
-export default function ExamPage({ params }: { params: { courseId: string } }) {
+export default function ExamPage({ params }: { params: Promise<{ courseId: string }> }) {
+  const paramsUnwrapped = React.use(params);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers]       = useState<Record<number, string>>({});
@@ -27,11 +28,11 @@ export default function ExamPage({ params }: { params: { courseId: string } }) {
 
   useEffect(() => {
     const load = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/questions?courseId=${params.courseId}`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/questions?courseId=${paramsUnwrapped.courseId}`);
       setQuestions(await res.json());
     };
     load();
-  }, [params.courseId]);
+  }, [paramsUnwrapped.courseId]);
 
   const handleAnswer = (ans: string) => {
     setAnswers((prev) => ({ ...prev, [questions[currentIdx].id]: ans }));

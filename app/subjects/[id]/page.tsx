@@ -25,9 +25,19 @@ export default async function SubjectPage({
 }) {
   const { id } = await params;
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/subjects/${id}`);
-  const subject: Subject = await res.json();
-
-  const totalQuestions = subject.courses.reduce((sum, c) => sum + c._count.questions, 0);
+  const payload = await res.json();
+  if (!res.ok) {
+    return (
+      <main className="flex-1 bg-navy px-6 py-10 md:px-10 lg:px-16">
+        <div className="max-w-3xl mx-auto text-center py-20">
+          <h2 className="text-2xl font-bold text-offwhite">Not found</h2>
+          <p className="text-muted mt-2">Subject not found or an error occurred.</p>
+        </div>
+      </main>
+    );
+  }
+  const subject: Subject = payload;
+  const totalQuestions = (subject.courses || []).reduce((sum, c) => sum + (c._count?.questions || 0), 0);
 
   return (
     <main className="flex-1 bg-navy px-6 py-10 md:px-10 lg:px-16">

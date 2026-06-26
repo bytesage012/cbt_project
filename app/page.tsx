@@ -19,7 +19,19 @@ export const metadata = {
 
 export default async function HomePage() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/subjects`);
-  const subjects: Subject[] = await res.json();
+  let subjects: Subject[] = [];
+  try {
+    const payload = await res.json();
+    if (Array.isArray(payload)) {
+      subjects = payload;
+    } else {
+      console.error('api/subjects returned non-array:', payload);
+      subjects = [];
+    }
+  } catch (err) {
+    console.error('Failed to parse /api/subjects response', err);
+    subjects = [];
+  }
 
   return (
     <>
