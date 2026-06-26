@@ -3,45 +3,176 @@ import React, { useEffect, useState, useCallback } from "react";
 import ExamTimer from "@/components/ExamTimer";
 import ExamQuestion from "@/components/ExamQuestion";
 import ScoreCard from "@/components/ScoreCard";
-import type { Question } from "@/lib/types";
+import ExamConfiguration from "@/components/ExamConfiguration";
+      {/* Top bar */}
+      <div className="sticky top-0 z-40 bg-navy-mid/95 backdrop-blur-md border-b border-navy-border px-3 sm:px-6 md:px-8 py-2.5 flex items-center justify-between gap-2 sm:gap-3">
+  mode: 'exam' | 'practice';
+          <a href={`/courses/${courseId}`} className="text-muted hover:text-gold transition-colors flex-shrink-0" aria-label="Back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6"/></svg>
+          </a>
+          <span className="text-[0.6875rem] text-muted font-semibold">
+            {answeredCount}/{questions.length}
+          </span>
+          <span className="text-offwhite-dim text-xs font-medium hidden sm:block">answered</span>
+        </div>
 
-export default function ExamPage({ params }: { params: Promise<{ courseId: string }> }) {
-  const paramsUnwrapped = React.use(params);
-  const [questions, setQuestions] = useState<Question[]>([]);
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [answers, setAnswers]       = useState<Record<number, string>>({});
-  const [duration, setDuration]     = useState(30 * 60);
-  const [finished, setFinished]     = useState(false);
-  const [timeTaken, setTimeTaken]   = useState(0);
-  const [startTime]                 = useState(() => Date.now());
-  const [showNav, setShowNav]       = useState(false);
+        {mode === 'exam' && <ExamTimer durationSeconds={duration} onTimeUp={handleFinish} />}
 
-  useEffect(() => {
-    const loadConfig = async () => {
-      const res = await fetch("/api/config");
-      const cfg = await res.json();
-      const dur = cfg.find((c: any) => c.key === "examDurationMinutes");
-      if (dur?.value) setDuration(Number(dur.value) * 60);
-    };
-    loadConfig();
-  }, []);
+        <button className="btn-primary text-xs py-2 px-4 flex-shrink-0" onClick={handleFinish}>
+          {mode === 'practice' ? 'Finish' : 'Submit'}
+        </button>
+      </div>
 
-  useEffect(() => {
-    const load = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/questions?courseId=${paramsUnwrapped.courseId}`);
-      setQuestions(await res.json());
-    };
-    load();
-  }, [paramsUnwrapped.courseId]);
+      {/* Main area */}
+      <div className="flex-1 flex flex-col items-center justify-center px-4 md:px-8 py-10 animate-fade-in" key={currentIdx}>
+        <ExamQuestion
+          question={currentQuestion}
+          questionNumber={currentIdx + 1}
+          total={questions.length}
+          selectedAnswer={answers[currentQuestion.id]?.selectedAnswer ?? null}
+          onAnswer={handleAnswer}
+        />
 
-  const handleAnswer = (ans: string) => {
-    setAnswers((prev) => ({ ...prev, [questions[currentIdx].id]: ans }));
+        {/* Practice mode review */}
+        {mode === 'practice' && practiceReview && (
+          <div className={`mt-8 p-6 rounded-lg border-2 max-w-md w-full ${practiceReview.isCorrect ? 'bg-green-900/20 border-green-500' : 'bg-red-900/20 border-red-500'}`}>
+            <p className={`text-sm font-semibold ${practiceReview.isCorrect ? 'text-green-300' : 'text-red-300'}`}>
+              {practiceReview.explanation}
+            </p>
+            <button
+              onClick={handleNextQuestion}
+              className={`mt-4 w-full py-2 rounded font-medium text-sm ${practiceReview.isCorrect ? 'bg-green-500/20 text-green-300 hover:bg-green-500/30' : 'bg-red-500/20 text-red-300 hover:bg-red-500/30'}`}
+            >
+              {currentIdx < questions.length - 1 ? 'Next Question' : 'Finish'}
+            </button>
+          </div>
+        )}
+
+        {/* Prev / Next for exam mode only */}
+        {mode === 'exam' && !practiceReview && (
+          <div className="flex items-center gap-2 sm:gap-3 mt-6 sm:mt-8 w-full max-w-2xl">
+            <button
+              className="btn-secondary flex-1 disabled:opacity-30"
+              disabled={currentIdx === 0}
+              onClick={() => setCurrentIdx((i) => i - 1)}
+  questionCount: number;
+  shuffleQuestions: boolean;
+};
+              Previous
+            </button>
+            {currentIdx < questions.length - 1 ? (
+              <button
+                className="btn-primary flex-1"
+                onClick={() => setCurrentIdx((i) => i + 1)}
+              >
+                Next
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            ) : (
+              <button className="btn-primary flex-1" onClick={handleFinish}>
+                Finish Exam
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Question navigator for exam mode only */}
+      {mode === 'exam' && (
+        <div className="border-t border-navy-border bg-navy-mid px-4 md:px-8 py-4">
+          <div className="max-w-2xl mx-auto">
+            <button
+              className="flex items-center gap-2 text-[0.6875rem] text-muted uppercase tracking-widest font-semibold mb-3 hover:text-offwhite transition-colors"
+              onClick={() => setShowNav(n => !n)}
+            >
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                {showNav ? <polyline points="18 15 12 9 6 15"/> : <polyline points="6 9 12 15 18 9"/>}
+              </svg>
+              Question Navigator
+            </button>
+
+            {showNav && (
+              <div className="flex flex-wrap gap-1.5 mb-2 animate-slide-up">
+                {questions.map((q, i) => {
+                  const isAnswered = answers[q.id] !== undefined;
+                  const isCurrent  = i === currentIdx;
+                  return (
+                    <button
+                      key={q.id}
+                      onClick={() => setCurrentIdx(i)}
+                      aria-label={`Go to question ${i + 1}`}
+                      className="w-7 h-7 text-[11px] font-bold rounded-md border transition-all duration-100"
+                      style={{
+                        background: isCurrent
+                          ? "var(--gold)"
+                          : isAnswered
+                          ? "rgba(201,168,76,0.15)"
+                          : "var(--navy-surface)",
+                        color: isCurrent ? "var(--navy)" : isAnswered ? "var(--gold)" : "var(--muted)",
+                        borderColor: isCurrent
+                          ? "var(--gold)"
+                          : isAnswered
+                          ? "rgba(201,168,76,0.35)"
+                          : "var(--border)",
+                      }}
+                    >
+                      {i + 1}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+
+            <p className="text-[0.6875rem] text-muted">
+              <span className="text-gold font-semibold">{answeredCount}</span> of {questions.length} answered
+            </p>
+          </div>
+        </div>
+      )}
+  // States
+  const [allQuestions, setAllQuestions] = useState<Question[]>([]);
+      setPracticeReview({
+        isCorrect,
+        explanation: isCorrect
+          ? `✓ Correct! The answer is "${question.answer}".`
+          : `✗ Incorrect. The correct answer is "${question.answer}".`,
+      });
+    }
   };
 
-  const submit = useCallback(() => {
-    setTimeTaken(Math.round((Date.now() - startTime) / 1000));
+  const handleNextQuestion = () => {
+    setPracticeReview(null);
+    if (currentIdx < questions.length - 1) {
+      setCurrentIdx(currentIdx + 1);
+    } else {
+      // Auto-finish if on last question
+      handleFinish();
+    }
+  };
+
+  const handleFinish = useCallback(async () => {
+    const timeTakenSeconds = startTime ? Math.round((Date.now() - startTime) / 1000) : 0;
+    setTimeTaken(timeTakenSeconds);
+
+    if (sessionId) {
+      // Complete session
+      await fetch(`/api/exam-sessions/${sessionId}`, { method: 'PUT' });
+    }
     setFinished(true);
-  }, [startTime]);
+  }, [sessionId, startTime]);
+
+  // Show config
+  if (showConfig) {
+    return (
+      <ExamConfiguration
+        totalAvailable={allQuestions.length}
+        onStart={handleExamStart}
+        isLoading={isLoading}
+      />
+    );
+  }
 
   if (questions.length === 0) {
     return (
@@ -55,16 +186,13 @@ export default function ExamPage({ params }: { params: Promise<{ courseId: strin
   }
 
   if (finished) {
-    const correct = questions.filter((q) => answers[q.id] === q.answer).length;
-    const results = questions.map((q) => ({ question: q, userAnswer: answers[q.id] ?? null }));
-    return (
-      <ScoreCard
-        total={questions.length}
-        correct={correct}
-        timeTaken={timeTaken}
-        results={results}
-      />
-    );
+    const correct = Object.values(answers).filter((a) => a.isCorrect).length;
+    const results = questions.map((q) => ({
+      question: q,
+      userAnswer: answers[q.id]?.selectedAnswer ?? null,
+      isCorrect: answers[q.id]?.isCorrect,
+    }));
+    return <ScoreCard total={questions.length} correct={correct} timeTaken={timeTaken} results={results} />;
   }
 
   const answeredCount = Object.keys(answers).length;
