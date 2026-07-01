@@ -1,174 +1,55 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import BulkUploader from "@/components/BulkUploader";
-import QuestionTable from "@/components/QuestionTable";
-import QuestionForm from "@/components/QuestionForm";
-import DeleteButton from "@/components/DeleteButton";
-import type { Question } from "@/lib/types";
+import { createClient } from "@/lib/supabase/server";
+import CoursePageClient from "@/components/CoursePageClient";
 
 type Course = {
-  id: string;
+  id: number;
   title: string;
   subjectId: number;
 };
 
-const XIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-  </svg>
-);
+type Question = {
+  id: number;
+  prompt: string;
+  options: string;
+  answer?: string | null;
+  difficulty: string;
+  explanation?: string | null;
+  courseId: number;
+};
 
-export default function CoursePage({ params }: { params: Promise<{ id: string }> }) {
-  const router = useRouter();
-  const paramsUnwrapped = React.use(params);
-  const [questions, setQuestions]       = useState<Question[]>([]);
-  const [showForm, setShowForm]         = useState(false);
-  const [editQuestion, setEditQuestion] = useState<Question | undefined>();
-  const [showUploader, setShowUploader] = useState(false);
-  const [course, setCourse]             = useState<Course | null>(null);
+export const dynamic = "force-dynamic";
 
-  useEffect(() => {
-    const load = async () => {
-      const [cRes, qRes] = await Promise.all([
-        fetch(`/api/courses/${paramsUnwrapped.id}`),
-        fetch(`/api/questions?courseId=${paramsUnwrapped.id}`),
-      ]);
-      setCourse(await cRes.json());
-      setQuestions(await qRes.json());
-    };
-    load();
-  }, [paramsUnwrapped.id]);
+export default async function CoursePage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const supabase = await createClient();
 
-  const refresh = async () => {
-    const qRes = await fetch(`/api/questions?courseId=${paramsUnwrapped.id}`);
-    setQuestions(await qRes.json());
-  };
+  const { data: course, error: courseError } = await supabase
+    .from("courses")
+    .select("id,title,subjectId")
+    .eq("id", Number(id))
+    .single();
 
-  const handleDeleteQuestion = async (id: string) => {
-    await fetch(`/api/questions/${id}`, { method: "DELETE" });
-    refresh();
-  };
-
-  const handleDeleteCourse = async () => {
-    await fetch(`/api/courses/${paramsUnwrapped.id}`, { method: "DELETE" });
-    // Navigate to the subject page (or home if no subjectId)
-    if (course?.subjectId) {
-      router.push(`/subjects/${course.subjectId}`);
-    } else {
-      router.push("/");
-    }
-    router.refresh();
-  };
-
-  const handleEdit = (q: Question) => {
-    setEditQuestion(q);
-    setShowForm(true);
-  };
-
-  const closeForm = () => { setShowForm(false); setEditQuestion(undefined); };
-
-  return (
-    <>
+  if (courseError || !course) {
+    return (
       <main className="flex-1 bg-navy px-6 py-10 md:px-10 lg:px-16">
-
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-muted mb-8 animate-fade-in">
-          <Link href="/" className="hover:text-gold transition-colors duration-150 flex items-center gap-1">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            Home
-          </Link>
-          {course?.subjectId && (
-            <>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-navy-border"><path d="M9 18l6-6-6-6"/></svg>
-              <Link href={`/subjects/${course.subjectId}`} className="hover:text-gold transition-colors duration-150">
-                Subject
-              </Link>
-            </>
-          )}
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-navy-border"><path d="M9 18l6-6-6-6"/></svg>
-          <span className="text-offwhite-dim font-medium truncate max-w-[200px]">
-            {course?.title ?? "Course"}
-          </span>
-        </nav>
-
-        {/* Heading + actions */}
-        <div className="flex flex-wrap items-start justify-between gap-4 mb-8 animate-slide-up">
-          <div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-offwhite mb-1 leading-tight">
-              {course?.title ?? "Loading…"}
-            </h1>
-            <p className="text-muted text-sm">
-              <span className="text-gold font-semibold">{questions.length}</span>{" "}
-              question{questions.length !== 1 ? "s" : ""} in this course
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2">
-            <button
-              className="btn-ghost text-sm"
-              onClick={() => { setEditQuestion(undefined); setShowForm(true); }}
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              <span className="hidden xs:inline">Add Question</span><span className="xs:hidden">Add</span>
-            </button>
-            <button className="btn-secondary text-sm" onClick={() => setShowUploader(true)}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              Upload
-            </button>
-            <a href={`/exam/${paramsUnwrapped.id}`} className="btn-primary text-sm">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Start Exam
-            </a>
-            <DeleteButton
-              label={course?.title ?? "this course"}
-              onConfirm={handleDeleteCourse}
-            />
-          </div>
-        </div>
-
-        {/* Question table */}
-        <div className="overflow-x-auto -mx-2 px-2">
-          <QuestionTable questions={questions} onDelete={handleDeleteQuestion} onEdit={handleEdit} />
+        <div className="max-w-3xl mx-auto text-center py-20">
+          <h2 className="text-2xl font-bold text-offwhite">Course not found</h2>
+          <p className="text-muted mt-2">The requested course does not exist or could not be loaded.</p>
         </div>
       </main>
+    );
+  }
 
-      {/* Modal: Question form */}
-      {showForm && (
-        <div className="fixed inset-0 bg-navy/85 backdrop-blur-sm flex items-end sm:items-center justify-center z-50 p-0 sm:p-4 animate-fade-in">
-          <div className="bg-navy-surface border border-navy-border rounded-t-2xl sm:rounded-xl p-5 sm:p-6 w-full sm:max-w-lg animate-scale-in shadow-modal max-h-[90vh] overflow-y-auto">
-            <QuestionForm
-              courseId={paramsUnwrapped.id}
-              question={editQuestion}
-              onSuccess={() => { closeForm(); refresh(); }}
-              onCancel={closeForm}
-            />
-          </div>
-        </div>
-      )}
+  const { data: questions } = await supabase
+    .from("questions")
+    .select("*")
+    .eq("courseId", Number(id));
 
-      {/* Modal: Bulk uploader */}
-      {showUploader && (
-        <div className="fixed inset-0 bg-navy/85 backdrop-blur-sm flex items-end sm:items-center justify-center z-50 p-0 sm:p-4 animate-fade-in">
-          <div className="bg-navy-surface border border-navy-border rounded-t-2xl sm:rounded-xl p-5 sm:p-6 w-full sm:max-w-lg animate-scale-in shadow-modal">
-            <div className="flex items-center justify-between mb-5">
-              <h2 className="text-base font-bold text-offwhite">Upload Questions</h2>
-              <button
-                className="w-7 h-7 flex items-center justify-center rounded-md text-muted hover:text-offwhite hover:bg-white/8 transition-all duration-150"
-                onClick={() => setShowUploader(false)}
-                aria-label="Close"
-              >
-                <XIcon />
-              </button>
-            </div>
-            <BulkUploader
-              courseId={params.id}
-              onSuccess={() => { setShowUploader(false); refresh(); }}
-            />
-          </div>
-        </div>
-      )}
-    </>
+  return (
+    <CoursePageClient
+      course={course as Course}
+      initialQuestions={Array.isArray(questions) ? questions : []}
+      courseId={id}
+    />
   );
 }

@@ -16,9 +16,16 @@ export default function BulkUploader({ courseId, onSuccess }: BulkUploaderProps)
   const parseCsv = (text: string) => {
     const lines = text.trim().split("\n");
     return lines.map((line) => {
-      const [prompt, optionA, optionB, optionC, optionD, answer, difficulty] =
+      const [prompt, optionA, optionB, optionC, optionD, answer, difficulty, explanation] =
         line.split(",").map((c) => c.trim());
-      return { prompt, options: JSON.stringify([optionA, optionB, optionC, optionD]), answer, difficulty, courseId: Number(courseId) };
+      return {
+        prompt,
+        options: JSON.stringify([optionA, optionB, optionC, optionD]),
+        answer,
+        difficulty,
+        explanation: explanation || null,
+        courseId: Number(courseId),
+      };
     });
   };
 
@@ -27,23 +34,51 @@ export default function BulkUploader({ courseId, onSuccess }: BulkUploaderProps)
   const handleUpload = async () => {
     if (!file) return;
     setLoading(true);
-    const text = await file.text();
-    let payload: any;
-    if (file.name.endsWith(".json")) {
-      const json = JSON.parse(text);
-      payload = { questions: json.map((q: any) => ({ ...q, options: typeof q.options === "string" ? q.options : JSON.stringify(q.options), courseId: Number(courseId) })) };
-    } else {
-      payload = { questions: parseCsv(text) };
-    }
-    const res = await fetch("/api/questions/upload", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-    if (res.ok) {
-      const data = await res.json();
-      setMsg({ text: `${data.inserted} questions added successfully.`, ok: true });
+    setMsg(null);
+
+    try {
+      const text = await file.text();
+      let questions: any[] = [];
+
+      if (file.name.endsWith('.json')) {
+        const parsed = JSON.parse(text);
+        if (Array.isArray(parsed)) {
+          questions = parsed;
+        } else if (Array.isArray(parsed.questions)) {
+          questions = parsed.questions;
+        } else {
+          throw new Error('JSON must be an array or contain a questions array');
+        }
+      } else {
+        questions = parseCsv(text);
+      }
+
+      const payload = {
+        questions: questions.map((q: any) => ({
+          ...q,
+          options: typeof q.options === 'string' ? q.options : JSON.stringify(q.options),
+          courseId: Number(courseId),
+        })),
+      };
+
+      const res = await fetch('/api/questions/upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json();
+      if (!res.ok) {
+        throw new Error(result.error ?? 'Upload failed — check your file format and try again.');
+      }
+
+      setMsg({ text: `${result.inserted} questions added successfully.`, ok: true });
       onSuccess();
-    } else {
-      setMsg({ text: "Upload failed — check your file format and try again.", ok: false });
+    } catch (error: any) {
+      setMsg({ text: error?.message ?? 'Upload failed — check your file format and try again.', ok: false });
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const ext = file?.name.split(".").pop()?.toUpperCase();
@@ -55,7 +90,7 @@ export default function BulkUploader({ courseId, onSuccess }: BulkUploaderProps)
         <span className="px-1.5 py-0.5 rounded bg-navy-deep border border-navy-border text-gold font-mono">JSON</span>
         <span>or</span>
         <span className="px-1.5 py-0.5 rounded bg-navy-deep border border-navy-border text-gold font-mono">CSV</span>
-        <span>· CSV: prompt, A, B, C, D, answer, difficulty</span>
+        <span>· CSV: prompt, A, B, C, D, answer, difficulty, explanation (optional)</span>
       </div>
 
       {/* Drop zone */}

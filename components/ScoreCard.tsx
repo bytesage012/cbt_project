@@ -1,31 +1,33 @@
 "use client";
 import React, { useState } from "react";
 import type { Question } from "@/lib/types";
-import { optionLabels } from "@/lib/types";
+import { optionLabels, getQuestionAnswerLabel, isQuestionAnswerCorrect } from "@/lib/types";
 
 type Result = { question: Question; userAnswer: string | null };
 
 type ScoreCardProps = {
+  courseId: number;
   total: number;
   correct: number;
   timeTaken: number;
   results: Result[];
 };
 
-export default function ScoreCard({ total, correct, timeTaken, results }: ScoreCardProps) {
+export default function ScoreCard({ courseId, total, correct, timeTaken, results }: ScoreCardProps) {
   const [expanded, setExpanded] = useState(false);
   const [filter, setFilter] = useState<"all" | "wrong" | "right">("all");
-  const percent = Math.round((correct / total) * 100);
-  const passed  = percent >= 50;
-  const wrong   = total - correct;
+  const computedCorrect = results.filter((r) => isQuestionAnswerCorrect(r.question, r.userAnswer ?? null)).length;
+  const percent = Math.round((computedCorrect / total) * 100);
+  const passed = percent >= 50;
+  const wrong = total - computedCorrect;
 
   const mins    = Math.floor(timeTaken / 60);
   const secs    = timeTaken % 60;
   const timeStr = `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
 
   const filteredResults = results.filter((r) => {
-    if (filter === "right") return r.userAnswer === r.question.answer;
-    if (filter === "wrong") return r.userAnswer !== r.question.answer;
+    if (filter === "right") return isQuestionAnswerCorrect(r.question, r.userAnswer ?? null);
+    if (filter === "wrong") return !isQuestionAnswerCorrect(r.question, r.userAnswer ?? null);
     return true;
   });
 
@@ -116,17 +118,18 @@ export default function ScoreCard({ total, correct, timeTaken, results }: ScoreC
                       : "text-muted hover:text-offwhite-dim"
                   }`}
                 >
-                  {f === "all" ? `All (${total})` : f === "right" ? `Correct (${correct})` : `Wrong (${wrong})`}
+                  {f === "all" ? `All (${total})` : f === "right" ? `Correct (${computedCorrect})` : `Wrong (${wrong})`}
                 </button>
               ))}
             </div>
 
             <ul className="divide-y divide-navy-border max-h-60 sm:max-h-72 overflow-y-auto">
               {filteredResults.map((r, i) => {
-                const options    = JSON.parse(r.question.options) as string[];
-                const correctIdx = r.question.answer ? optionLabels.indexOf(r.question.answer as any) : -1;
-                const correctTxt = correctIdx >= 0 ? options[correctIdx] : "";
-                const isCorrect  = r.userAnswer === r.question.answer;
+                const options = JSON.parse(r.question.options) as string[];
+                const answerDetails = getQuestionAnswerLabel(r.question);
+                const correctLabel = answerDetails.label;
+                const correctTxt = answerDetails.text ?? (typeof r.question.answer === "string" ? r.question.answer : "");
+                const isCorrect = isQuestionAnswerCorrect(r.question, r.userAnswer ?? null);
 
                 return (
                   <li key={i} className="flex items-start gap-3 px-4 py-3.5">
@@ -138,11 +141,44 @@ export default function ScoreCard({ total, correct, timeTaken, results }: ScoreC
                         Q{results.indexOf(r) + 1}: {r.question.prompt}
                       </p>
                       <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
-                        <span className="text-[0.6875rem] text-muted">Correct: <span className="text-success font-semibold">{r.question.answer}. {correctTxt}</span></span>
+                        <span className="text-[0.6875rem] text-muted">Correct: <span className="text-success font-semibold">{correctLabel ? `${correctLabel}. ${correctTxt}` : correctTxt}</span></span>
                         {!isCorrect && (
-                          <span className="text-[0.6875rem] text-muted">Yours: <span className="text-danger font-semibold">{r.userAnswer ?? "—"}</span></span>
+                          (() => {
+                            const sel = r.userAnswer ?? null;
+                            if (!sel) return (
+                              <span className="text-[0.6875rem] text-muted">Yours: <span className="text-danger font-semibold">—</span></span>
+                            );
+
+                            const options = JSON.parse(r.question.options) as string[];
+                            // If userAnswer is a label like 'A'
+                            if (optionLabels.includes(sel as any)) {
+                              const idx = optionLabels.indexOf(sel as any);
+                              const txt = options[idx] ?? sel;
+                              return (
+                                <span className="text-[0.6875rem] text-muted">Yours: <span className="text-danger font-semibold">{sel}. {txt}</span></span>
+                              );
+                            }
+
+                            // Try to match by option text (loose normalized)
+                            const normalize = (s: string) => s.toString().trim().toLowerCase();
+                            const foundIdx = options.findIndex((o) => normalize(o) === normalize(sel));
+                            if (foundIdx !== -1) {
+                              const label = optionLabels[foundIdx];
+                              return (
+                                <span className="text-[0.6875rem] text-muted">Yours: <span className="text-danger font-semibold">{label}. {options[foundIdx]}</span></span>
+                              );
+                            }
+
+                            // Fallback: raw text
+                            return (
+                              <span className="text-[0.6875rem] text-muted">Yours: <span className="text-danger font-semibold">{sel}</span></span>
+                            );
+                          })()
                         )}
                       </div>
+                      {r.question.explanation && (
+                        <p className="text-[0.8rem] text-muted mt-2">{r.question.explanation}</p>
+                      )}
                     </div>
                   </li>
                 );
@@ -156,7 +192,11 @@ export default function ScoreCard({ total, correct, timeTaken, results }: ScoreC
 
         {/* Actions */}
         <div className="grid grid-cols-2 gap-2">
-          <button className="btn-secondary w-full" onClick={() => (window.location.href = "/")}>
+          <button className="btn-secondary w-full" onClick={() => (window.location.href = `/exam/${courseId}?review=1`)}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 5h14v14H5z"/><path d="M9 9h6v6H9z"/></svg>
+            Review
+          </button>
+          <button className="btn-primary w-full" onClick={() => (window.location.href = "/")}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             Home
           </button>

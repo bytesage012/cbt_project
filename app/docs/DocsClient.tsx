@@ -224,36 +224,40 @@ const JSON_EXAMPLE = `[
     "prompt": "What is the capital of France?",
     "options": ["London", "Berlin", "Paris", "Madrid"],
     "answer": "Paris",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "explanation": "Paris is the capital and most populous city of France."
   },
   {
     "prompt": "Which of the following is a prime number?",
     "options": ["4", "6", "7", "9"],
     "answer": "7",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "explanation": "7 is divisible only by 1 and itself, so it's prime."
   },
   {
     "prompt": "The powerhouse of the cell is the:",
     "options": ["Nucleus", "Mitochondria", "Ribosome", "Golgi apparatus"],
     "answer": "Mitochondria",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "explanation": "Mitochondria produce ATP through cellular respiration."
   }
 ]`;
 
-const CSV_EXAMPLE = `What is the capital of France?,London,Berlin,Paris,Madrid,Paris,easy
-Which of the following is a prime number?,4,6,7,9,7,medium
-The powerhouse of the cell is the:,Nucleus,Mitochondria,Ribosome,Golgi apparatus,Mitochondria,easy`;
+const CSV_EXAMPLE = `What is the capital of France?,London,Berlin,Paris,Madrid,Paris,easy,Paris is the capital and most populous city of France.
+Which of the following is a prime number?,4,6,7,9,7,medium,7 is divisible only by 1 and itself, so it's prime.
+The powerhouse of the cell is the:,Nucleus,Mitochondria,Ribosome,Golgi apparatus,Mitochondria,easy,Mitochondria produce ATP through cellular respiration.`;
 
 const JSON_TEMPLATE = `[
   {
     "prompt": "YOUR QUESTION TEXT HERE?",
     "options": ["Option A", "Option B", "Option C", "Option D"],
     "answer": "Option A",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "explanation": "Optional explanation or answer rationale."
   }
 ]`;
 
-const CSV_TEMPLATE = `Question text here?,Option A,Option B,Option C,Option D,Option A,easy`;
+const CSV_TEMPLATE = `Question text here?,Option A,Option B,Option C,Option D,Option A,easy,Optional explanation or rationale`;
 
 const PROMPTS = [
   {
@@ -267,7 +271,8 @@ const PROMPTS = [
     "prompt": "<the full question text>",
     "options": ["<option A>", "<option B>", "<option C>", "<option D>"],
     "answer": "<exact text of the correct option>",
-    "difficulty": "<easy | medium | hard>"
+    "difficulty": "<easy | medium | hard>",
+    "explanation": "<optional explanation or rationale>"
   }
 ]
 
@@ -285,9 +290,9 @@ Here are my questions:
     badge: "PDF / Word / TXT → CSV",
     title: "Convert Any Text Source to CSV",
     description: "Produces a CSV file ready to upload directly — no editing needed.",
-    prompt: `You are a CSV formatter for a CBT (Computer-Based Test) platform. I will give you multiple-choice questions in any format. Convert them into a CSV with EXACTLY 7 comma-separated columns per row:
+    prompt: `You are a CSV formatter for a CBT (Computer-Based Test) platform. I will give you multiple-choice questions in any format. Convert them into a CSV with EXACTLY 8 comma-separated columns per row:
 
-Column order: question, optionA, optionB, optionC, optionD, answer, difficulty
+Column order: question, optionA, optionB, optionC, optionD, answer, difficulty, explanation
 
 Rules:
 1. Each row = one question. No header row.
@@ -295,7 +300,8 @@ Rules:
 3. difficulty must be one of: easy, medium, hard
 4. If any field contains a comma, wrap it in double quotes.
 5. Remove all numbering or lettering from option text (e.g. "A." "1.").
-6. Output ONLY the raw CSV — no explanation, no code fences.
+6. The last column may contain an optional explanation or rationale.
+7. Output ONLY the raw CSV — no explanation, no code fences.
 
 Here are my questions:
 [PASTE YOUR QUESTIONS HERE]`,
@@ -313,7 +319,8 @@ Here are my questions:
     "prompt": "<full question text>",
     "options": ["<option A>", "<option B>", "<option C>", "<option D>"],
     "answer": "<exact text of correct option>",
-    "difficulty": "<easy | medium | hard>"
+    "difficulty": "<easy | medium | hard>",
+    "explanation": "<optional explanation or rationale>"
   }
 ]
 
@@ -336,7 +343,8 @@ Rules:
     "prompt": "<question text>",
     "options": ["<A>", "<B>", "<C>", "<D>"],
     "answer": "<exact correct option text>",
-    "difficulty": "<easy | medium | hard>"
+    "difficulty": "<easy | medium | hard>",
+    "explanation": "<optional explanation or rationale>"
   }
 ]
 
@@ -361,7 +369,8 @@ Questions:
     "prompt": "<question in original language>",
     "options": ["<option 1>", "<option 2>", "<option 3>", "<option 4>"],
     "answer": "<exact text of correct option, in original language>",
-    "difficulty": "<easy | medium | hard>"
+    "difficulty": "<easy | medium | hard>",
+    "explanation": "<optional explanation or rationale>"
   }
 ]
 
@@ -635,10 +644,11 @@ export default function DocsClient() {
                 </tr>
               </thead>
               <tbody>
-                <FieldRow field="prompt"     type="string"          required desc="The question text"                  example='"What is 2+2?"'           />
-                <FieldRow field="options"    type="string[]"        required desc="Array of exactly 4 answer options"  example='["2","3","4","5"]'         />
-                <FieldRow field="answer"     type="string"          required desc="Exact text of the correct option"   example='"4"'                        />
-                <FieldRow field="difficulty" type="easy|medium|hard" required={false} desc="Difficulty level"          example='"medium"'                   />
+                <FieldRow field="prompt"       type="string"          required desc="The question text"                  example='"What is 2+2?"'           />
+                <FieldRow field="options"      type="string[]"        required desc="Array of exactly 4 answer options"  example='["2","3","4","5"]'         />
+                <FieldRow field="answer"       type="string"          required desc="Exact text of the correct option"   example='"4"'                        />
+                <FieldRow field="difficulty"   type="easy|medium|hard" required={false} desc="Difficulty level"                   example='"medium"'                   />
+                <FieldRow field="explanation"  type="string"          required={false} desc="Optional explanation or rationale"  example='"2+2 equals 4 because..."'   />
               </tbody>
             </table>
           </div>

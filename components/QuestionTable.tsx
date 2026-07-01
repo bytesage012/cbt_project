@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import type { Question } from "@/lib/types";
+import { getQuestionAnswerLabel } from "@/lib/types";
 import DeleteButton from "@/components/DeleteButton";
 
 type QuestionTableProps = {
@@ -19,8 +20,9 @@ export default function QuestionTable({ questions, onDelete, onEdit }: QuestionT
   const [page, setPage] = useState(0);
   const [search, setSearch] = useState("");
   const pageSize = 10;
+  const safeQuestions = Array.isArray(questions) ? questions : [];
 
-  const filtered = questions.filter((q) =>
+  const filtered = safeQuestions.filter((q) =>
     q.prompt.toLowerCase().includes(search.toLowerCase())
   );
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
@@ -49,7 +51,7 @@ export default function QuestionTable({ questions, onDelete, onEdit }: QuestionT
           />
         </div>
         <span className="text-[0.6875rem] text-muted font-semibold uppercase tracking-wide">
-          {filtered.length} of {questions.length} questions
+          {filtered.length} of {safeQuestions.length} questions
         </span>
       </div>
 
@@ -90,7 +92,7 @@ export default function QuestionTable({ questions, onDelete, onEdit }: QuestionT
                       </span>
                     </td>
                     <td className="px-4 py-3 text-center hidden sm:table-cell">
-                      <span className="badge">{q.answer}</span>
+                      <span className="badge">{getQuestionAnswerLabel(q).label ?? q.answer ?? "—"}</span>
                     </td>
                     <td className="px-4 py-3 text-center hidden md:table-cell">
                       <span className={`badge ${badge} flex items-center justify-center gap-1.5`}>

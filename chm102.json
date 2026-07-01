@@ -1,0 +1,2844 @@
+[
+    {
+        "prompt": "A compound contain 38.4% of carbon, 4.8% of hydrogen and 56.8% chlorine. Using emp formula, find the compound",
+        "options": [
+            "C2H5Cl",
+            "C3H5Cl",
+            "C2H3Cl",
+            "C3H4Cl"
+        ],
+        "answer": "C2H3Cl",
+        "difficulty": "medium",
+        "explanation": "The empirical formula is determined by converting percentages to moles and finding the simplest whole-number ratio."
+    },
+    {
+        "prompt": "Which of the following has the highest boiling point",
+        "options": [
+            "Zn2+",
+            "W",
+            "Cu2+",
+            "Cd2+"
+        ],
+        "answer": "W",
+        "difficulty": "medium",
+        "explanation": "Tungsten (W) is a transition metal with very strong metallic bonding, leading to an extremely high boiling point."
+    },
+    {
+        "prompt": "The dehydration of ethanol is an example of what reaction",
+        "options": [
+            "Elimination",
+            "Addition",
+            "Redox",
+            "Displacement"
+        ],
+        "answer": "Elimination",
+        "difficulty": "easy",
+        "explanation": "Dehydration of an alcohol involves the removal of a water molecule, which is an elimination reaction."
+    },
+    {
+        "prompt": "General formula for Ketone",
+        "options": [
+            "R-CO-R'",
+            "R-CHO",
+            "R-OH",
+            "R-COOH"
+        ],
+        "answer": "R-CO-R'",
+        "difficulty": "easy",
+        "explanation": "Ketones have a carbonyl group bonded to two carbon atoms, hence the general formula R-CO-R'."
+    },
+    {
+        "prompt": "General formula for Alkane",
+        "options": [
+            "CnH2n",
+            "CnH2n-2",
+            "CnH2n+2",
+            "CnH2n+1"
+        ],
+        "answer": "CnH2n+2",
+        "difficulty": "easy",
+        "explanation": "Alkanes are saturated hydrocarbons with the general formula CnH2n+2."
+    },
+    {
+        "prompt": "Which oxidation number of Fe is the most stable",
+        "options": [
+            "2+",
+            "3+",
+            "1+",
+            "4+"
+        ],
+        "answer": "3+",
+        "difficulty": "easy",
+        "explanation": "Fe3+ has a half-filled d-orbital configuration (d5), which provides extra stability."
+    },
+    {
+        "prompt": "A yellow precipitate slightly soluble in ammonia solution formed when a compound reacted with AgNO3 is formed by what compound?",
+        "options": [
+            "Bromobenzene",
+            "Chlorobenzene",
+            "Vinylbenzene",
+            "Allyl chloride"
+        ],
+        "answer": "Bromobenzene",
+        "difficulty": "medium",
+        "explanation": "Bromobenzene, an aryl halide, does not readily undergo nucleophilic substitution, giving a yellow precipitate with AgNO3 that is slightly soluble in ammonia."
+    },
+    {
+        "prompt": "Which of the following ions doesn't undergo d-d electron transition and is colourless?",
+        "options": [
+            "Cu+",
+            "Fe2+",
+            "Ti3+",
+            "Sc2+"
+        ],
+        "answer": "Cu+",
+        "difficulty": "medium",
+        "explanation": "Cu+ has a completely filled d-orbital (d10), so it cannot undergo d-d transitions and is colourless."
+    },
+    {
+        "prompt": "Which of the following induces polarity?",
+        "options": [
+            "Steric effect and negative inductive effect",
+            "Resonance effect and positive inductive effect",
+            "Resonance effect and positive mesometric effect",
+            "Steric effect and negative mesometric effect"
+        ],
+        "answer": "Resonance effect and positive inductive effect",
+        "difficulty": "hard",
+        "explanation": "Both resonance and positive inductive effects can influence the polarity of a molecule."
+    },
+    {
+        "prompt": "What compound gives the Prussian blue colour of nitrogen during Qualitative Analysis?",
+        "options": [
+            "Fe3[Fe(CN)6]6",
+            "Fe4[Fe(CN)6]6",
+            "Fe4[Fe(CN)6]3",
+            "Fe3[Fe(CN)6]3"
+        ],
+        "answer": "Fe4[Fe(CN)6]3",
+        "difficulty": "medium",
+        "explanation": "Prussian blue is ferric ferrocyanide, with the formula Fe4[Fe(CN)6]3."
+    },
+    {
+        "prompt": "Prop-1-ene reacts with HCl in presence of peroxide to yield",
+        "options": [
+            "2-chloro propane",
+            "1-chloro propane",
+            "3-chloro propane",
+            "Chloropropane"
+        ],
+        "answer": "1-chloro propane",
+        "difficulty": "hard",
+        "explanation": "In the presence of peroxide, the addition of HCl to propene follows an anti-Markovnikov addition, yielding 1-chloropropane."
+    },
+    {
+        "prompt": "All Group 2 elements form hydroxide except",
+        "options": [
+            "Beryllium",
+            "Barium",
+            "Magnesium",
+            "Calcium"
+        ],
+        "answer": "Beryllium",
+        "difficulty": "medium",
+        "explanation": "Beryllium hydroxide is amphoteric and its properties differ significantly from the rest of Group 2, often considered an exception in simple hydroxide formation contexts."
+    },
+    {
+        "prompt": "Between Cis and Trans Isomers, which has lower dipole moment?",
+        "options": [
+            "Cis",
+            "Trans"
+        ],
+        "answer": "Trans",
+        "difficulty": "medium",
+        "explanation": "In trans isomers, the dipole moments of substituents often cancel each other out, leading to a net dipole moment of zero."
+    },
+    {
+        "prompt": "Which of the following shows magnetic moment in 3d series?",
+        "options": [
+            "It remains constant",
+            "It increases from Sn to Zn",
+            "It increases to Cr then decreases",
+            "It decreases to Cr then increases"
+        ],
+        "answer": "It increases to Cr then decreases",
+        "difficulty": "hard",
+        "explanation": "The magnetic moment is related to the number of unpaired electrons. This number increases up to chromium (d5) and then decreases as electrons start pairing."
+    },
+    {
+        "prompt": "Dehydration of Butan-2-ol gives",
+        "options": [
+            "But-1-ene",
+            "But-2-ene",
+            "But-3-ene",
+            "Butene"
+        ],
+        "answer": "But-2-ene",
+        "difficulty": "medium",
+        "explanation": "Dehydration of secondary alcohols like butan-2-ol follows Zaitsev's rule, yielding the more substituted alkene, which is but-2-ene."
+    },
+    {
+        "prompt": "An organic compound containing C. H and N only was found to contain C = 65.45% and H = 9.09% The vapour density was 27.5. On boiling with dil. H2SO4 it gave a monobasic acid on distillation with soda lime and ethane on treatment with tin and HCl. What is the substance?",
+        "options": [
+            "Propanamide",
+            "Ethanamide",
+            "Propanenitrile",
+            "Ethanenitrile"
+        ],
+        "answer": "Propanenitrile",
+        "difficulty": "hard",
+        "explanation": "The data points to propanenitrile (C3H5N). Hydrolysis gives propanoic acid, and reduction gives propylamine."
+    },
+    {
+        "prompt": "Given the compounds CH2 = C = CHCH2OH and CH3 = C(OH) = C(CH3)CH = CHCH3 find the values of x,y and z in their molecular formula CxHyOz",
+        "options": [
+            "x = n, y = 2n + 2, z = 1",
+            "x = 2n, y = 2n + 2, z = 1",
+            "x = n, y = 2n - 2, z = 1",
+            "x = 2n, y = 2n - 2, z = 1"
+        ],
+        "answer": "x = n, y = 2n - 2, z = 1",
+        "difficulty": "hard",
+        "explanation": "The molecular formula for these compounds follows the pattern for an alcohol with two degrees of unsaturation, which is CnH2n-2O."
+    },
+    {
+        "prompt": "Heterolytic fission of 2-chloro-2-methyl propane produces what type of carbocation?",
+        "options": [
+            "1°",
+            "2°",
+            "3°",
+            "4°"
+        ],
+        "answer": "3°",
+        "difficulty": "medium",
+        "explanation": "2-chloro-2-methyl propane is a tertiary alkyl halide. Its heterolytic fission produces a tertiary carbocation."
+    },
+    {
+        "prompt": "IUPAC nomenclature of ethyl methyl propyl methane is",
+        "options": [
+            "2-ethyl pentane",
+            "3-methyl hexane",
+            "2-propyl butane",
+            "Heptane"
+        ],
+        "answer": "3-methyl hexane",
+        "difficulty": "medium",
+        "explanation": "The longest carbon chain containing the 'methane' carbon is 6 carbons (hexane). Numbering to give the lowest locant gives 3-methylhexane."
+    },
+    {
+        "prompt": "Alkanes undergo the following reactions except",
+        "options": [
+            "Combustion",
+            "Sulphonation",
+            "Addition",
+            "Isomerization"
+        ],
+        "answer": "Addition",
+        "difficulty": "medium",
+        "explanation": "Alkanes are saturated hydrocarbons and primarily undergo substitution and combustion reactions; they do not undergo addition reactions."
+    },
+    {
+        "prompt": "Nitrogen was discovered by",
+        "options": [
+            "Albert Einstein",
+            "Daniel Rutherford",
+            "Ernest Ikoli",
+            "James Robinson"
+        ],
+        "answer": "Daniel Rutherford",
+        "difficulty": "easy",
+        "explanation": "Daniel Rutherford is credited with the discovery of nitrogen in 1772."
+    },
+    {
+        "prompt": "Vinylic C-H bond of propene is overlapping of 1s of hydrogen orbital with",
+        "options": [
+            "Sp of carbon",
+            "Sp3 of carbon",
+            "Sp2 of carbon",
+            "dsp of carbon"
+        ],
+        "answer": "Sp2 of carbon",
+        "difficulty": "medium",
+        "explanation": "The vinylic carbons in propene are sp2 hybridized, so the C-H bond involves overlap with an sp2 orbital."
+    },
+    {
+        "prompt": "Which of the following are all members of the carbonyl group?",
+        "options": [
+            "Alcohol, Amides, Esters, Alkanoic acids",
+            "Alkanones, Alkanamides, Esters, Alkanoyl halides",
+            "Alcohol, Amines, Esters, Alkanoic acids",
+            "Alkanones, Alkanamides, Ethers, Alkanoyl halides"
+        ],
+        "answer": "Alkanones, Alkanamides, Esters, Alkanoyl halides",
+        "difficulty": "medium",
+        "explanation": "This option lists functional groups that all contain a carbonyl (C=O) group."
+    },
+    {
+        "prompt": "Each fractionating column for condensation and vaporization is called ?",
+        "options": [
+            "Theoretical plates",
+            "Distillation units",
+            "Separation stages",
+            "Vaporization chambers"
+        ],
+        "answer": "Theoretical plates",
+        "difficulty": "easy",
+        "explanation": "In fractional distillation, each stage of vaporization and condensation is referred to as a theoretical plate."
+    },
+    {
+        "prompt": "The most used separation technique in soap industry is",
+        "options": [
+            "Distillation",
+            "Extraction",
+            "Crystallization",
+            "Filtration"
+        ],
+        "answer": "Extraction",
+        "difficulty": "medium",
+        "explanation": "The soap industry uses extraction to separate the soap from the glycerol and other byproducts."
+    },
+    {
+        "prompt": "All Group 1 elements form nitrides except",
+        "options": [
+            "Sodium",
+            "Lithium",
+            "Francium",
+            "Potassium"
+        ],
+        "answer": "Lithium",
+        "difficulty": "hard",
+        "explanation": "Lithium is the only Group 1 element that directly reacts with nitrogen to form lithium nitride (Li3N)."
+    },
+    {
+        "prompt": "Atomic radii increase across period and then becomes constant with the last 5 due to",
+        "options": [
+            "Variable oxidation state",
+            "Balance of effective nuclear charge and screening effect",
+            "Stability of atoms",
+            "Small atomic radius"
+        ],
+        "answer": "Balance of effective nuclear charge and screening effect",
+        "difficulty": "hard",
+        "explanation": "The balance between increasing nuclear charge (which pulls electrons in) and the screening effect (which shields outer electrons) causes atomic radii to initially decrease then remain constant."
+    },
+    {
+        "prompt": "Pick which is arranged in order of increasing priority",
+        "options": [
+            "COR < CHO < CONH2 < COOH",
+            "COOH < CONH2 < CHO < COR",
+            "CHO < COR < CONH2 < COOH",
+            "COR < CONH2 < COOH < CHO"
+        ],
+        "answer": "CHO < COR < CONH2 < COOH",
+        "difficulty": "hard",
+        "explanation": "In IUPAC nomenclature, priority is based on oxidation state. Carboxylic acids (COOH) have the highest priority, followed by amides (CONH2), then aldehydes (CHO), and finally ketones (COR)."
+    },
+    {
+        "prompt": "All these are uses of carbon nanotubes except",
+        "options": [
+            "Used as sensors",
+            "Used as energy storage",
+            "Used as fertilizer",
+            "Used as composite material"
+        ],
+        "answer": "Used as fertilizer",
+        "difficulty": "medium",
+        "explanation": "Carbon nanotubes are used in electronics, energy storage, and composites, but not as fertilizers."
+    },
+    {
+        "prompt": "Which reaction involves the conversion of octanol to octane",
+        "options": [
+            "Reduction",
+            "Elimination",
+            "Dehydration",
+            "Hydrogenation"
+        ],
+        "answer": "Reduction",
+        "difficulty": "medium",
+        "explanation": "Converting an alcohol to an alkane involves the removal of the hydroxyl group and is a reduction reaction."
+    },
+    {
+        "prompt": "Which has the large component of organic compounds",
+        "options": [
+            "Chicken",
+            "Shoe",
+            "Stone",
+            "Rock"
+        ],
+        "answer": "Chicken",
+        "difficulty": "easy",
+        "explanation": "Biological materials like chicken are primarily composed of organic compounds."
+    },
+    {
+        "prompt": "The least detailed way of writing organic compound is?",
+        "options": [
+            "Empirical formula",
+            "Condensed formula",
+            "Structural formula",
+            "Stick formula"
+        ],
+        "answer": "Empirical formula",
+        "difficulty": "easy",
+        "explanation": "The empirical formula only gives the simplest whole-number ratio of atoms, providing the least structural detail."
+    },
+    {
+        "prompt": "Commercial, of plates are used in fractional distillation",
+        "options": [
+            "Units",
+            "Hundreds",
+            "Tens",
+            "Thousands"
+        ],
+        "answer": "Hundreds",
+        "difficulty": "easy",
+        "explanation": "Fractional distillation columns, especially in industry, can use hundreds of theoretical plates for efficient separation."
+    },
+    {
+        "prompt": "Which of these is not an organic compound",
+        "options": [
+            "Borazene",
+            "Anthracene",
+            "Naphthalene",
+            "Benzene"
+        ],
+        "answer": "Borazene",
+        "difficulty": "medium",
+        "explanation": "Borazene (B3N3H6) is an inorganic compound, isoelectronic and isostructural with benzene, which is organic."
+    },
+    {
+        "prompt": "During the analysis of an organic compound, 29.1g of CO2 and 11.08g H2O was obtained. Give the empirical formula for the compound",
+        "options": [
+            "CH2",
+            "CH",
+            "CH3",
+            "C2H5"
+        ],
+        "answer": "CH2",
+        "difficulty": "medium",
+        "explanation": "From the masses of CO2 and H2O, the moles of C and H can be calculated, leading to an empirical formula of CH2."
+    },
+    {
+        "prompt": "What is the empirical formula for ethene?",
+        "options": [
+            "CH2",
+            "CH",
+            "CH3",
+            "C2H4"
+        ],
+        "answer": "CH2",
+        "difficulty": "easy",
+        "explanation": "Ethene (C2H4) has an empirical formula of CH2, which is the simplest whole-number ratio."
+    },
+    {
+        "prompt": "Ethers are represented by?",
+        "options": [
+            "C2nH2n+1-O-C2nH2n",
+            "R-O-R'",
+            "R-OR'",
+            "CnH2n+1-OH"
+        ],
+        "answer": "R-O-R'",
+        "difficulty": "easy",
+        "explanation": "Ethers have the general formula R-O-R', where R and R' are alkyl or aryl groups."
+    },
+    {
+        "prompt": "Which of these tells if a nanotubes is metallic of a semiconductor?",
+        "options": [
+            "Shape",
+            "Chirality and diameter",
+            "Number of walls",
+            "Temperature"
+        ],
+        "answer": "Chirality and diameter",
+        "difficulty": "hard",
+        "explanation": "The electrical properties of carbon nanotubes (whether metallic or semiconducting) are determined by their chirality and diameter."
+    },
+    {
+        "prompt": "BeO and MgO are not found freely, why?",
+        "options": [
+            "High reactivity",
+            "Low melting point",
+            "High lattice energy",
+            "Low solubility"
+        ],
+        "answer": "High lattice energy",
+        "difficulty": "hard",
+        "explanation": "BeO and MgO have very high lattice energies, making them extremely stable and not found as free elements or simple oxides in nature, but rather in compounds."
+    },
+    {
+        "prompt": "Pick the odd one out",
+        "options": [
+            "Geometric isomer",
+            "Optical isomer",
+            "Configuration isomer",
+            "Structural isomer"
+        ],
+        "answer": "Configuration isomer",
+        "difficulty": "medium",
+        "explanation": "Geometric and optical isomerism are types of stereoisomerism (configuration isomerism). Structural isomerism is a different category."
+    },
+    {
+        "prompt": "Which is not used to describe a chiral carbon",
+        "options": [
+            "Stereogenic centre",
+            "Asymmetric carbon",
+            "Chiral center",
+            "Stereochemistry"
+        ],
+        "answer": "Stereochemistry",
+        "difficulty": "medium",
+        "explanation": "Stereochemistry is the field of study, while the other terms are used to describe a chiral carbon atom."
+    },
+    {
+        "prompt": "Hydrolysis of amides give?",
+        "options": [
+            "Aldehyde and amine",
+            "Carboxylic acid and amine",
+            "Acid and ketone",
+            "Alcohol and carboxylic acid"
+        ],
+        "answer": "Carboxylic acid and amine",
+        "difficulty": "medium",
+        "explanation": "Hydrolysis of an amide cleaves the C-N bond, yielding a carboxylic acid and an amine (or ammonia)."
+    },
+    {
+        "prompt": "Alkyl cyanide and alkyl isocyanide is which type of isomerism ?",
+        "options": [
+            "Functional isomerism",
+            "Chain isomerism",
+            "Position isomerism",
+            "Metamerism"
+        ],
+        "answer": "Functional isomerism",
+        "difficulty": "medium",
+        "explanation": "Alkyl cyanides (R-CN) and alkyl isocyanides (R-NC) have different functional groups, making them functional isomers."
+    },
+    {
+        "prompt": "Ethers are often used for",
+        "options": [
+            "Reactants",
+            "Products",
+            "Catalyst",
+            "Solvents"
+        ],
+        "answer": "Solvents",
+        "difficulty": "easy",
+        "explanation": "Ethers are widely used as solvents in organic reactions due to their inert nature and ability to dissolve many organic compounds."
+    },
+    {
+        "prompt": "Which electronic effect is Delocalization of pi electron towards an attacking reagent",
+        "options": [
+            "Electromeric effect",
+            "Mesomeric effect",
+            "Inductive effect",
+            "Hyperconjugation"
+        ],
+        "answer": "Mesomeric effect",
+        "difficulty": "hard",
+        "explanation": "The mesomeric effect (or resonance effect) involves the delocalization of pi electrons. The direction of delocalization can be towards or away from an attacking reagent."
+    },
+    {
+        "prompt": "Which electronic effect is Delocalization of pi electron away from an attacking reagent",
+        "options": [
+            "Electromeric effect",
+            "Mesomeric effect",
+            "Inductive effect",
+            "Hyperconjugation"
+        ],
+        "answer": "Mesomeric effect",
+        "difficulty": "hard",
+        "explanation": "The mesomeric effect (or resonance effect) involves the delocalization of pi electrons. The direction of delocalization can be towards or away from an attacking reagent."
+    },
+    {
+        "prompt": "What determine stability of carbocation?",
+        "options": [
+            "Inductive effect and hyperconjugation",
+            "Resonance and inductive effect",
+            "Hybridization and resonance",
+            "Electronegativity and bond length"
+        ],
+        "answer": "Inductive effect and hyperconjugation",
+        "difficulty": "medium",
+        "explanation": "Carbocations are stabilized by electron-donating groups via the inductive effect and by hyperconjugation."
+    },
+    {
+        "prompt": "Which determines purity of organic compound.",
+        "options": [
+            "Melting and boiling point",
+            "Crystallization",
+            "Boiling and crystallization",
+            "Distillation"
+        ],
+        "answer": "Melting and boiling point",
+        "difficulty": "easy",
+        "explanation": "A pure organic compound has a sharp and constant melting and boiling point."
+    },
+    {
+        "prompt": "Which hybridization is present in but-2- yne?",
+        "options": [
+            "sp2 and sp",
+            "sp3 and sp",
+            "sp3 and sp2",
+            "sp and sp"
+        ],
+        "answer": "sp3 and sp",
+        "difficulty": "medium",
+        "explanation": "In but-2-yne, the terminal carbons are sp3 hybridized, and the internal alkyne carbons are sp hybridized."
+    },
+    {
+        "prompt": "Hydrogen bond of alcohol in water leads to",
+        "options": [
+            "Low melting point",
+            "High boiling point",
+            "Insolubility",
+            "Low solubility"
+        ],
+        "answer": "High boiling point",
+        "difficulty": "medium",
+        "explanation": "Hydrogen bonding between alcohol molecules or alcohol and water requires extra energy to break, leading to a higher boiling point."
+    },
+    {
+        "prompt": "Which effect increase basicity in organic compounds.",
+        "options": [
+            "Positive inductive effect",
+            "Negative inductive effect",
+            "Resonance effect",
+            "Mesomeric effect"
+        ],
+        "answer": "Positive inductive effect",
+        "difficulty": "medium",
+        "explanation": "Electron-donating groups (positive inductive effect) increase the electron density on the basic atom, thereby increasing its basicity."
+    },
+    {
+        "prompt": "Lowest enthalpy of atomization in 3D transition series",
+        "options": [
+            "Manganese",
+            "Copper",
+            "Zinc",
+            "Iron"
+        ],
+        "answer": "Zinc",
+        "difficulty": "medium",
+        "explanation": "Zinc has a completely filled d-orbital (d10), which results in weaker metallic bonding and the lowest enthalpy of atomization."
+    },
+    {
+        "prompt": "Which group In periodic table has the lowest ionization power",
+        "options": [
+            "Group 4",
+            "Group 1",
+            "Group 8",
+            "Group 16"
+        ],
+        "answer": "Group 1",
+        "difficulty": "easy",
+        "explanation": "Group 1 elements (alkali metals) have the lowest ionization energies because they have a single valence electron that is easily removed."
+    },
+    {
+        "prompt": "Which of these properties decrease in first transition series up to manganese then remain fairly constant",
+        "options": [
+            "Atomic radius",
+            "Ionization energy",
+            "Melting point",
+            "Electronegativity"
+        ],
+        "answer": "Atomic radius",
+        "difficulty": "hard",
+        "explanation": "Atomic radii in the first transition series decrease initially due to increasing nuclear charge but then become fairly constant due to the balance of nuclear charge and screening effect."
+    },
+    {
+        "prompt": "What is the hybridization of Sp3?",
+        "options": [
+            "Tetrahedral",
+            "Trigonal planar",
+            "Linear",
+            "Octahedral"
+        ],
+        "answer": "Tetrahedral",
+        "difficulty": "easy",
+        "explanation": "An sp3 hybridized atom has a tetrahedral geometry with bond angles of 109.5°."
+    },
+    {
+        "prompt": "Aluminum react with nitrogen at what temperature",
+        "options": [
+            "25°C",
+            "100°C",
+            "500°C",
+            "800°C"
+        ],
+        "answer": "800°C",
+        "difficulty": "hard",
+        "explanation": "Aluminum reacts with nitrogen at high temperatures, typically around 800°C, to form aluminum nitride."
+    },
+    {
+        "prompt": "Nitrogen react with hydrogen at what temperature and pressure",
+        "options": [
+            "200°C, 100 atm",
+            "450°C, 200 atm",
+            "100°C, 50 atm",
+            "800°C, 1 atm"
+        ],
+        "answer": "450°C, 200 atm",
+        "difficulty": "medium",
+        "explanation": "The Haber process for synthesizing ammonia from nitrogen and hydrogen uses a temperature of about 450°C and a pressure of about 200 atm."
+    },
+    {
+        "prompt": "Caesium is in what block ?",
+        "options": [
+            "d-block",
+            "s-block",
+            "f-block",
+            "p-block"
+        ],
+        "answer": "s-block",
+        "difficulty": "easy",
+        "explanation": "Caesium is an alkali metal in Group 1, which belongs to the s-block of the periodic table."
+    },
+    {
+        "prompt": "What is not properties of transition element",
+        "options": [
+            "Partially filled d orbital",
+            "Fully filled d orbital",
+            "Empty filled d orbital",
+            "Half filled d orbital"
+        ],
+        "answer": "Fully filled d orbital",
+        "difficulty": "medium",
+        "explanation": "Transition elements are defined by having partially filled d-orbitals. Zinc, which has a fully filled d-orbital, is sometimes considered not a true transition element."
+    },
+    {
+        "prompt": "Which determines purity of organic compound.",
+        "options": [
+            "Melting and boiling point",
+            "Crystallization",
+            "Boiling and crystallization",
+            "Distillation"
+        ],
+        "answer": "Melting and boiling point",
+        "difficulty": "easy",
+        "explanation": "A pure substance has a sharp and constant melting and boiling point."
+    },
+    {
+        "prompt": "Isomerization is an example of",
+        "options": [
+            "Addition reaction",
+            "Substitution reaction",
+            "Rearrangement reaction",
+            "Elimination reaction"
+        ],
+        "answer": "Rearrangement reaction",
+        "difficulty": "medium",
+        "explanation": "Isomerization involves the rearrangement of atoms within a molecule to form a different isomer."
+    },
+    {
+        "prompt": "An organic compound (A) has a molecular weight of 78 and an empirical formula of Ch(A) is resistant to attack on oxidizing agent, but undergoes substitution and addition reactions. X- ray analysis shows that the distance between adj carbon atoms is 1.38A(intermediate between single and double bond length). The evidence suggests that the compound (A)is",
+        "options": [
+            "Cyclohexane",
+            "n-Hexane",
+            "Toluene",
+            "Benzene"
+        ],
+        "answer": "Benzene",
+        "difficulty": "medium",
+        "explanation": "Benzene has a molecular weight of 78, undergoes substitution and addition reactions, and has carbon-carbon bond lengths intermediate between single and double bonds."
+    },
+    {
+        "prompt": "Glucose is",
+        "options": [
+            "Monohydric",
+            "Dihydric",
+            "Polyhydric",
+            "Monohydric alcohol"
+        ],
+        "answer": "Polyhydric",
+        "difficulty": "easy",
+        "explanation": "Glucose contains multiple hydroxyl (-OH) groups, making it a polyhydric alcohol."
+    },
+    {
+        "prompt": "Paracetamol is a/an",
+        "options": [
+            "Amine",
+            "Amide",
+            "Carboxylic acid",
+            "Alcohol"
+        ],
+        "answer": "Amide",
+        "difficulty": "medium",
+        "explanation": "Paracetamol (acetaminophen) contains an amide functional group (-NH-CO-CH3)."
+    },
+    {
+        "prompt": "What is the condensed formula of 4,4-dimethylhept-2,5-diyne?",
+        "options": [
+            "CH3C≡CCH2C≡CCH3",
+            "CH3C≡CCH2C≡C(CH3)2",
+            "CH3C≡CCH2C≡CC(CH3)2",
+            "CH3C≡CCH2C≡CCH2CH3"
+        ],
+        "answer": "CH3C≡CCH2C≡CC(CH3)2",
+        "difficulty": "hard",
+        "explanation": "The parent chain is heptane with two triple bonds at positions 2 and 5, and two methyl groups at position 4."
+    },
+    {
+        "prompt": "Lucas test is used to test for?",
+        "options": [
+            "Alcohols",
+            "Aldehydes",
+            "Ketones",
+            "Acids"
+        ],
+        "answer": "Alcohols",
+        "difficulty": "easy",
+        "explanation": "The Lucas test is used to distinguish between primary, secondary, and tertiary alcohols based on their reaction rate with ZnCl2 in HCl."
+    },
+    {
+        "prompt": "Silicon reacts with aqua regia to give ?",
+        "options": [
+            "SiCl4",
+            "SiO2",
+            "SiF4",
+            "Si3N4"
+        ],
+        "answer": "SiCl4",
+        "difficulty": "hard",
+        "explanation": "Aqua regia is a strong oxidizing agent that can react with silicon to form silicon tetrachloride (SiCl4)."
+    },
+    {
+        "prompt": "C = 40.0% H = 6.7% and O = 53.3% . What is the compound?",
+        "options": [
+            "C2H4O2",
+            "CH2O",
+            "C6H12O6",
+            "C2H2O"
+        ],
+        "answer": "CH2O",
+        "difficulty": "medium",
+        "explanation": "The empirical formula is calculated from the percentages, giving a ratio of CH2O. This corresponds to formaldehyde."
+    },
+    {
+        "prompt": "Silicon reacts with oxygen at what temperature?",
+        "options": [
+            "100°C",
+            "400°C",
+            "1000°C",
+            "1500°C"
+        ],
+        "answer": "1000°C",
+        "difficulty": "hard",
+        "explanation": "Silicon reacts with oxygen at high temperatures, around 1000°C, to form silicon dioxide (SiO2)."
+    },
+    {
+        "prompt": "Which of the following has the most priority according to R and S configuration.",
+        "options": [
+            "-CHCl2",
+            "-CH2Cl",
+            "-CH3",
+            "-H"
+        ],
+        "answer": "-CHCl2",
+        "difficulty": "hard",
+        "explanation": "In Cahn-Ingold-Prelog priority rules, atoms with higher atomic numbers have higher priority. Chlorine has a higher atomic number than carbon or hydrogen."
+    },
+    {
+        "prompt": "IUPAC name for diethyl methyl methanol",
+        "options": [
+            "3-ethylpentan-3-ol",
+            "2-methyl-2-ethylbutanol",
+            "3-methylpentan-3-ol",
+            "2-ethylbutan-2-ol"
+        ],
+        "answer": "3-methylpentan-3-ol",
+        "difficulty": "medium",
+        "explanation": "The parent chain is pentane. There is a methyl group at position 3 and a hydroxyl group at position 3, making it 3-methylpentan-3-ol."
+    },
+    {
+        "prompt": "The bond angle in an sp3 hybridized atom is:",
+        "options": [
+            "109.5°",
+            "120°",
+            "180°",
+            "90°"
+        ],
+        "answer": "109.5°",
+        "difficulty": "easy",
+        "explanation": "An sp3 hybridized atom has a tetrahedral geometry with a bond angle of 109.5°."
+    },
+    {
+        "prompt": "The bond angle in an sp2 hybridized atom is:",
+        "options": [
+            "109.5°",
+            "120°",
+            "180°",
+            "90°"
+        ],
+        "answer": "120°",
+        "difficulty": "easy",
+        "explanation": "An sp2 hybridized atom has a trigonal planar geometry with a bond angle of 120°."
+    },
+    {
+        "prompt": "The type of bonds present in fullerene molecules is:",
+        "options": [
+            "Only single bonds",
+            "Only double bonds",
+            "Alternating single and double bonds",
+            "Triple bonds only"
+        ],
+        "answer": "Alternating single and double bonds",
+        "difficulty": "medium",
+        "explanation": "Fullerenes, like C60, have a structure with a network of alternating single and double bonds, similar to graphite."
+    },
+    {
+        "prompt": "Which of the following is a use of boron?",
+        "options": [
+            "Making fertilizers",
+            "Making bulletproof vests",
+            "Cooking utensils",
+            "Producing sugar"
+        ],
+        "answer": "Making bulletproof vests",
+        "difficulty": "medium",
+        "explanation": "Boron compounds, such as boron carbide and boron nitride, are used in the production of bulletproof vests and other hard materials."
+    },
+    {
+        "prompt": "Boiling occurs when:",
+        "options": [
+            "The temperature is above 100°C",
+            "Internal pressure equals atmospheric pressure",
+            "The temperature is below 0°C",
+            "The pressure is reduced"
+        ],
+        "answer": "Internal pressure equals atmospheric pressure",
+        "difficulty": "medium",
+        "explanation": "Boiling occurs when the vapor pressure of a liquid equals the external atmospheric pressure."
+    },
+    {
+        "prompt": "The plates used in fractional distillation are called:",
+        "options": [
+            "Plastic plates",
+            "Fractionating plates",
+            "Heating plates",
+            "Condenser plates"
+        ],
+        "answer": "Fractionating plates",
+        "difficulty": "easy",
+        "explanation": "In fractional distillation, the plates in the column are called fractionating plates or theoretical plates."
+    },
+    {
+        "prompt": "The number of carbon atoms in a C60 fullerene molecule is:",
+        "options": [
+            "20",
+            "40",
+            "60",
+            "80"
+        ],
+        "answer": "60",
+        "difficulty": "easy",
+        "explanation": "The name 'C60' indicates that there are 60 carbon atoms in the molecule."
+    },
+    {
+        "prompt": "Which factor decreases acidity?",
+        "options": [
+            "Negative inductive effect",
+            "Resonance effect",
+            "Positive inductive effect",
+            "Hydrogen bonding"
+        ],
+        "answer": "Positive inductive effect",
+        "difficulty": "medium",
+        "explanation": "Electron-donating groups (positive inductive effect) decrease acidity by stabilizing the protonated form and destabilizing the conjugate base."
+    },
+    {
+        "prompt": "Hydrolysis of ethene produces:",
+        "options": [
+            "1-butanol",
+            "2-butanol",
+            "Ethanol",
+            "Methanol"
+        ],
+        "answer": "Ethanol",
+        "difficulty": "medium",
+        "explanation": "Hydration (hydrolysis) of ethene in the presence of an acid catalyst produces ethanol."
+    },
+    {
+        "prompt": "Which of the following is not a type of chemical formula?",
+        "options": [
+            "Molecular formula",
+            "Structural formula",
+            "Empirical formula",
+            "Built formula"
+        ],
+        "answer": "Built formula",
+        "difficulty": "easy",
+        "explanation": "Built formula is not a standard term for a chemical formula. The standard types are molecular, structural, and empirical formulas."
+    },
+    {
+        "prompt": "The process involving arsenic and iodine is an example of:",
+        "options": [
+            "Crystallization",
+            "Distillation",
+            "Sublimation",
+            "Filtration"
+        ],
+        "answer": "Sublimation",
+        "difficulty": "easy",
+        "explanation": "Arsenic and iodine can be purified by sublimation, as they change directly from solid to gas upon heating."
+    },
+    {
+        "prompt": "In sublimation, an inverted funnel is used to:",
+        "options": [
+            "Speed up evaporation",
+            "Prevent loss of solid and direct vapors to cooler surface",
+            "Increase pressure in the system",
+            "Provide more heat"
+        ],
+        "answer": "Prevent loss of solid and direct vapors to cooler surface",
+        "difficulty": "medium",
+        "explanation": "The inverted funnel in sublimation is used to trap the sublimed vapors and direct them to a cool surface where they can condense back into a solid."
+    },
+    {
+        "prompt": "CNTs are short for:",
+        "options": [
+            "Carbon Nanotubes",
+            "Copper Nitrate Tubes",
+            "Chemical Neutral Tetrahedrals",
+            "Calcium Nitride Tubes"
+        ],
+        "answer": "Carbon Nanotubes",
+        "difficulty": "easy",
+        "explanation": "CNTs is the standard abbreviation for Carbon Nanotubes."
+    },
+    {
+        "prompt": "The melting point of nitrogen is approximately:",
+        "options": [
+            "-196°C",
+            "-210°C",
+            "-100°C",
+            "-273°C"
+        ],
+        "answer": "-210°C",
+        "difficulty": "medium",
+        "explanation": "The melting point of nitrogen is approximately -210°C."
+    },
+    {
+        "prompt": "The boiling point of nitrogen is approximately:",
+        "options": [
+            "-196°C",
+            "-210°C",
+            "-100°C",
+            "-273°C"
+        ],
+        "answer": "-196°C",
+        "difficulty": "medium",
+        "explanation": "The boiling point of nitrogen is approximately -196°C."
+    },
+    {
+        "prompt": "Liquid nitrogen is used as a to preserve biological materials.",
+        "options": [
+            "Coolant",
+            "Solvent",
+            "Catalyst",
+            "Fuel"
+        ],
+        "answer": "Coolant",
+        "difficulty": "easy",
+        "explanation": "Liquid nitrogen is extremely cold and is used as a cryogenic coolant to preserve biological materials."
+    },
+    {
+        "prompt": "Reaction of B2O3 with Mg would give:",
+        "options": [
+            "Boron",
+            "Borax",
+            "Boron nitride",
+            "Magnesium boride"
+        ],
+        "answer": "Boron",
+        "difficulty": "medium",
+        "explanation": "Magnesium can reduce boron oxide to elemental boron."
+    },
+    {
+        "prompt": "The effects described in the electronic theory of chemistry are:",
+        "options": [
+            "Inductive, mesomeric, electrometer effects",
+            "Ionic, covalent, polar effects",
+            "Static, dynamic, thermal effects",
+            "Magnetic, polarizing, neutral effects"
+        ],
+        "answer": "Inductive, mesomeric, electrometer effects",
+        "difficulty": "medium",
+        "explanation": "The electronic theory of chemistry involves effects like inductive, mesomeric (resonance), and electromeric effects."
+    },
+    {
+        "prompt": "1,1-dimethylpropan-1-ol and 2-methylbutan-1-ol exhibit which type of isomerism?",
+        "options": [
+            "Chain isomerism",
+            "Position isomerism",
+            "Functional group isomerism",
+            "Tautomerism"
+        ],
+        "answer": "Chain isomerism",
+        "difficulty": "medium",
+        "explanation": "Both compounds have the same molecular formula and functional group but differ in the structure of the carbon chain, making them chain isomers."
+    },
+    {
+        "prompt": "Which of the following contains a secondary carbon atom?",
+        "options": [
+            "(CH3)2CH-NH2",
+            "CH3-NH2",
+            "(CH3)3C-NH2",
+            "CH3CH2-NH2"
+        ],
+        "answer": "(CH3)2CH-NH2",
+        "difficulty": "medium",
+        "explanation": "In (CH3)2CH-NH2, the central carbon is bonded to two methyl groups and one amine group, making it a secondary carbon."
+    },
+    {
+        "prompt": "The hybridization of carbon atoms in fullerene is:",
+        "options": [
+            "sp3",
+            "sp2",
+            "sp",
+            "dsp2"
+        ],
+        "answer": "sp2",
+        "difficulty": "medium",
+        "explanation": "The carbon atoms in fullerene are sp2 hybridized, forming a sheet-like structure."
+    },
+    {
+        "prompt": "The electronic properties of fullerene are due to:",
+        "options": [
+            "Delocalized π-electrons",
+            "Ionic bonds",
+            "Hydrogen bonds",
+            "Presence of triple bonds"
+        ],
+        "answer": "Delocalized π-electrons",
+        "difficulty": "medium",
+        "explanation": "Fullerenes have a network of delocalized π-electrons, which gives them their unique electronic properties."
+    },
+    {
+        "prompt": "Hydrolysis of butyl acetate produces:",
+        "options": [
+            "Butanol and ethanoic acid",
+            "Butyric acid and acetic acid",
+            "Butanol and propanoic acid",
+            "Butyric acid and methanoic acid"
+        ],
+        "answer": "Butanol and ethanoic acid",
+        "difficulty": "medium",
+        "explanation": "Butyl acetate is an ester. Its hydrolysis yields butanol (from the alkyl group) and ethanoic acid (from the acyl group)."
+    },
+    {
+        "prompt": "Ozonolysis of 2-methylhept-2-ene yields:",
+        "options": [
+            "Propanal and pentan-2-one",
+            "Ethanal and hexan-2-one",
+            "Butanal and butan-2-one",
+            "Pentanal and propanone"
+        ],
+        "answer": "Propanal and pentan-2-one",
+        "difficulty": "hard",
+        "explanation": "Ozonolysis cleaves the double bond. 2-methylhept-2-ene gives propanal and pentan-2-one."
+    },
+    {
+        "prompt": "In a distillation setup, the condensed vapour is collected in the:",
+        "options": [
+            "Fractionating column",
+            "Receiving flask",
+            "Condenser",
+            "Distillation flask"
+        ],
+        "answer": "Receiving flask",
+        "difficulty": "easy",
+        "explanation": "The condensed liquid (distillate) is collected in a receiving flask."
+    },
+    {
+        "prompt": "Fullerene is used as a drug carrier because:",
+        "options": [
+            "It is toxic to cells",
+            "It is soluble in acids",
+            "It has a hollow cage structure that can encapsulate molecules",
+            "It reacts with water to release drugs"
+        ],
+        "answer": "It has a hollow cage structure that can encapsulate molecules",
+        "difficulty": "medium",
+        "explanation": "The hollow spherical structure of fullerene allows it to trap and carry drug molecules."
+    },
+    {
+        "prompt": "The hybridization of carbon atoms in carbon nanotubes (CNTs) is:",
+        "options": [
+            "sp3",
+            "sp2",
+            "sp",
+            "dsp2"
+        ],
+        "answer": "sp2",
+        "difficulty": "medium",
+        "explanation": "Carbon nanotubes are made of rolled-up graphene sheets, where carbon atoms are sp2 hybridized."
+    },
+    {
+        "prompt": "What is the product obtained from Lassaigne's test for nitrogen?",
+        "options": [
+            "Sodium sulphide",
+            "Sodium cyanide",
+            "Sodium nitrate",
+            "Sodium hydroxide"
+        ],
+        "answer": "Sodium cyanide",
+        "difficulty": "medium",
+        "explanation": "In Lassaigne's test for nitrogen, the nitrogen in the organic compound is converted to sodium cyanide (NaCN)."
+    },
+    {
+        "prompt": "Which product shows a violet colouration with sodium nitroprusside solution?",
+        "options": [
+            "Sulphide ion",
+            "Thiol group",
+            "Cyanide ion",
+            "Halide ion"
+        ],
+        "answer": "Sulphide ion",
+        "difficulty": "medium",
+        "explanation": "The presence of a sulphide ion is detected by the formation of a violet color with sodium nitroprusside."
+    },
+    {
+        "prompt": "In the detection of nitrogen by Lassaigne's test, what is the intermediate product formed?",
+        "options": [
+            "Sodium hydroxide",
+            "Sodium cyanide",
+            "Sodium sulphate",
+            "Sodium chloride"
+        ],
+        "answer": "Sodium cyanide",
+        "difficulty": "medium",
+        "explanation": "In Lassaigne's test, the nitrogen in the organic compound is first converted to sodium cyanide (NaCN)."
+    },
+    {
+        "prompt": "When boron reacts with chlorine, the product formed is:",
+        "options": [
+            "BCl2",
+            "BCl3",
+            "B2Cl4",
+            "B2Cl2"
+        ],
+        "answer": "BCl3",
+        "difficulty": "medium",
+        "explanation": "Boron reacts with chlorine to form boron trichloride (BCl3)."
+    },
+    {
+        "prompt": "One importance of carbon nanotubes (CNTs) is:",
+        "options": [
+            "Production of plastics",
+            "High tensile strength for reinforcing materials",
+            "Increasing boiling point of liquids",
+            "Water purification by chlorination"
+        ],
+        "answer": "High tensile strength for reinforcing materials",
+        "difficulty": "medium",
+        "explanation": "Carbon nanotubes have extremely high tensile strength and are used as reinforcing materials in composites."
+    },
+    {
+        "prompt": "The shape of fullerene (C60) is:",
+        "options": [
+            "Spherical",
+            "Cubic",
+            "Pyramidal",
+            "Cylindrical"
+        ],
+        "answer": "Spherical",
+        "difficulty": "easy",
+        "explanation": "Buckminsterfullerene (C60) has a spherical shape, resembling a soccer ball."
+    },
+    {
+        "prompt": "Which factor can affect the properties of CNTs?",
+        "options": [
+            "Their chirality and diameter",
+            "Colour of CNTs",
+            "Solubility in water",
+            "Density of the liquid they are in"
+        ],
+        "answer": "Their chirality and diameter",
+        "difficulty": "hard",
+        "explanation": "The electrical and mechanical properties of carbon nanotubes are heavily dependent on their chirality and diameter."
+    },
+    {
+        "prompt": "An application of CNTs in nanotechnology is:",
+        "options": [
+            "Making rubber tyres",
+            "Drug delivery systems",
+            "Distilling alcohol",
+            "Manufacturing glass bottles"
+        ],
+        "answer": "Drug delivery systems",
+        "difficulty": "medium",
+        "explanation": "Carbon nanotubes are being explored for drug delivery systems due to their ability to be functionalized and carry molecules."
+    },
+    {
+        "prompt": "The empirical formula of a compound is the formula that shows:",
+        "options": [
+            "The exact number of each atom",
+            "The simplest whole-number ratio of atoms",
+            "The molecular mass of the compound",
+            "The structure of the molecule"
+        ],
+        "answer": "The simplest whole-number ratio of atoms",
+        "difficulty": "easy",
+        "explanation": "The empirical formula gives the simplest whole-number ratio of atoms in a compound."
+    },
+    {
+        "prompt": "If a compound contains 40% carbon, 6.7% hydrogen and 53.3% oxygen by mass, its empirical formula is:",
+        "options": [
+            "C2H4O2",
+            "CH2O",
+            "C6H12O6",
+            "C2H2O"
+        ],
+        "answer": "CH2O",
+        "difficulty": "medium",
+        "explanation": "The empirical formula is calculated from the percentage composition, yielding a ratio of CH2O."
+    },
+    {
+        "prompt": "A compound that forms one spot during a chromatography test is said to be:",
+        "options": [
+            "Impure",
+            "Pure",
+            "Saturated",
+            "Crystalline"
+        ],
+        "answer": "Pure",
+        "difficulty": "easy",
+        "explanation": "A pure compound will form a single spot on a chromatogram, while an impure one will show multiple spots."
+    },
+    {
+        "prompt": "The formula for ferric ferrocyanide is:",
+        "options": [
+            "Fe3[Fe(CN)6]2",
+            "Fe[Fe(CN)6]3",
+            "Fe2[Fe(CN)6]3",
+            "Fe4[Fe(CN)6]3"
+        ],
+        "answer": "Fe4[Fe(CN)6]3",
+        "difficulty": "hard",
+        "explanation": "Ferric ferrocyanide, also known as Prussian blue, has the formula Fe4[Fe(CN)6]3."
+    },
+    {
+        "prompt": "Sodium nitroprusside imparts a violet colour due to the formation of:",
+        "options": [
+            "[Fe(CN)5NOS]4-",
+            "[Fe(CN)6]3-",
+            "[Fe(CN)6]4-",
+            "[FeNO]2+"
+        ],
+        "answer": "[Fe(CN)5NOS]4-",
+        "difficulty": "hard",
+        "explanation": "The violet color is due to the formation of the complex ion [Fe(CN)5NOS]4-."
+    },
+    {
+        "prompt": "Alkyl cyanides and alkyl isocyanides are examples of:",
+        "options": [
+            "Structural isomers",
+            "Geometrical isomers",
+            "Optical isomers",
+            "Chain isomers"
+        ],
+        "answer": "Structural isomers",
+        "difficulty": "medium",
+        "explanation": "Alkyl cyanides (R-CN) and alkyl isocyanides (R-NC) differ in the connectivity of atoms, making them structural isomers."
+    },
+    {
+        "prompt": "Hydrolysis of butyl acetate produces:",
+        "options": [
+            "Butanol and ethanoic acid",
+            "Butyric acid and acetic acid",
+            "Butanol and propanoic acid",
+            "Butyric acid and methanoic acid"
+        ],
+        "answer": "Butanol and ethanoic acid",
+        "difficulty": "medium",
+        "explanation": "Hydrolysis of an ester like butyl acetate yields an alcohol (butanol) and a carboxylic acid (ethanoic acid)."
+    },
+    {
+        "prompt": "Ozonolysis of 2-methylhept-2-ene yields:",
+        "options": [
+            "Ethanal and hexan-2-one",
+            "Propanal and pentan-2-one",
+            "Butanal and butan-2-one",
+            "Pentanal and propanone"
+        ],
+        "answer": "Propanal and pentan-2-one",
+        "difficulty": "hard",
+        "explanation": "Ozonolysis of 2-methylhept-2-ene cleaves the double bond to form propanal and pentan-2-one."
+    },
+    {
+        "prompt": "In a distillation setup, the condensed vapour is collected in the:",
+        "options": [
+            "Receiving flask",
+            "Condenser tube",
+            "Fractionating column",
+            "Separating funnel"
+        ],
+        "answer": "Receiving flask",
+        "difficulty": "easy",
+        "explanation": "The condensed vapour, now a liquid, is collected in a receiving flask."
+    },
+    {
+        "prompt": "Fullerene is used as a drug carrier because:",
+        "options": [
+            "It has a hollow cage structure that can encapsulate molecules",
+            "It dissolves in water",
+            "It reacts with acids to release drugs",
+            "It is a strong oxidizing agent"
+        ],
+        "answer": "It has a hollow cage structure that can encapsulate molecules",
+        "difficulty": "medium",
+        "explanation": "The hollow cage structure of fullerene allows it to encapsulate drug molecules for targeted delivery."
+    },
+    {
+        "prompt": "The hybridization of carbon atoms in carbon nanotubes (CNTs) is:",
+        "options": [
+            "sp3",
+            "sp2",
+            "sp",
+            "dsp2"
+        ],
+        "answer": "sp2",
+        "difficulty": "medium",
+        "explanation": "Carbon atoms in CNTs are sp2 hybridized, forming a hexagonal lattice."
+    },
+    {
+        "prompt": "Which of the following is not a type of spectroscopy?",
+        "options": [
+            "Infrared spectroscopy",
+            "Ultraviolet-visible spectroscopy",
+            "Magnetic resonance spectroscopy",
+            "Chromatography"
+        ],
+        "answer": "Chromatography",
+        "difficulty": "easy",
+        "explanation": "Chromatography is a separation technique, not a type of spectroscopy."
+    },
+    {
+        "prompt": "The second name given to fullerene is:",
+        "options": [
+            "Buckminsterfullerene",
+            "Carbon nanorod",
+            "Graphene sphere",
+            "Nano diamond"
+        ],
+        "answer": "Buckminsterfullerene",
+        "difficulty": "easy",
+        "explanation": "The C60 fullerene is commonly known as buckminsterfullerene, named after Buckminster Fuller."
+    },
+    {
+        "prompt": "The strength of organic acids and bases is affected by:",
+        "options": [
+            "Inductive effect and resonance effect",
+            "Melting point",
+            "Colour of the compound",
+            "Density"
+        ],
+        "answer": "Inductive effect and resonance effect",
+        "difficulty": "medium",
+        "explanation": "Inductive and resonance effects are key factors that influence the acidity or basicity of organic compounds."
+    },
+    {
+        "prompt": "Which of the following is a separation technique?",
+        "options": [
+            "Filtration",
+            "Neutralization",
+            "Oxidation",
+            "Sublimation reaction"
+        ],
+        "answer": "Filtration",
+        "difficulty": "easy",
+        "explanation": "Filtration is a physical separation technique used to separate solids from liquids or gases."
+    },
+    {
+        "prompt": "Who is regarded as the father of organic chemistry?",
+        "options": [
+            "Friedrich Wohler",
+            "Antoine Lavoisier",
+            "Friedrich August Kekulé",
+            "Friedrich Wohler"
+        ],
+        "answer": "Friedrich Wohler",
+        "difficulty": "easy",
+        "explanation": "Friedrich Wohler is widely regarded as the father of organic chemistry due to his synthesis of urea."
+    },
+    {
+        "prompt": "Who is regarded as the father of chemistry?",
+        "options": [
+            "Dmitri Mendeleev",
+            "Antoine Lavoisier",
+            "Robert Boyle",
+            "John Dalton"
+        ],
+        "answer": "Antoine Lavoisier",
+        "difficulty": "easy",
+        "explanation": "Antoine Lavoisier is often called the father of modern chemistry."
+    },
+    {
+        "prompt": "Which of the following factors favour the stability of benzene?",
+        "options": [
+            "Positive inductive effect",
+            "Negative inductive effect",
+            "Resonance",
+            "Hydrogen bonding"
+        ],
+        "answer": "Resonance",
+        "difficulty": "medium",
+        "explanation": "The stability of benzene is primarily due to the resonance stabilization of its delocalized π-electrons."
+    },
+    {
+        "prompt": "The factor responsible for the stability of alkanoic acids is:",
+        "options": [
+            "Hydrogen bonding",
+            "Resonance in benzene",
+            "Positive inductive effect",
+            "Dipole-dipole attraction only"
+        ],
+        "answer": "Hydrogen bonding",
+        "difficulty": "medium",
+        "explanation": "Alkanoic acids form strong intermolecular hydrogen bonds, which contribute to their stability and high boiling points."
+    },
+    {
+        "prompt": "Carbon nanotubes are used in drug delivery because:",
+        "options": [
+            "They are spherical in shape",
+            "They can encapsulate and transport molecules efficiently",
+            "They dissolve readily in acids",
+            "They are highly reactive with oxygen"
+        ],
+        "answer": "They can encapsulate and transport molecules efficiently",
+        "difficulty": "medium",
+        "explanation": "The cylindrical structure of carbon nanotubes allows them to encapsulate and transport drug molecules."
+    },
+    {
+        "prompt": "Which is the most reactive among the following hydrocarbons?",
+        "options": [
+            "Ethane",
+            "Propane",
+            "Butane",
+            "Ethene"
+        ],
+        "answer": "Ethene",
+        "difficulty": "easy",
+        "explanation": "Ethene is an alkene with a carbon-carbon double bond, which is more reactive than the single bonds in alkanes."
+    },
+    {
+        "prompt": "The scientist who first derived phosphorus from bone ash was:",
+        "options": [
+            "Antoine Lavoisier",
+            "Hennig Brand",
+            "Robert Boyle",
+            "Joseph Priestley"
+        ],
+        "answer": "Hennig Brand",
+        "difficulty": "easy",
+        "explanation": "Hennig Brand discovered phosphorus in 1669 while trying to create the Philosopher's Stone from urine."
+    },
+    {
+        "prompt": "The hybridization of the carbon atom does not change in:",
+        "options": [
+            "Single to double bond",
+            "Rotation around a sigma bond",
+            "Formation of triple bond",
+            "Conversion of alkane to alkene"
+        ],
+        "answer": "Rotation around a sigma bond",
+        "difficulty": "medium",
+        "explanation": "Rotation around a sigma bond involves the rotation of bonded atoms without changing the hybridization of the carbon atom."
+    },
+    {
+        "prompt": "The factor responsible for the stability of alkanoic acids is:",
+        "options": [
+            "Hydrogen bonding",
+            "Resonance in benzene",
+            "Positive inductive effect",
+            "Van der Waals forces"
+        ],
+        "answer": "Hydrogen bonding",
+        "difficulty": "medium",
+        "explanation": "Alkanoic acids form strong intermolecular hydrogen bonds, contributing to their stability."
+    },
+    {
+        "prompt": "The general formula of alkanes is:",
+        "options": [
+            "CnH2n",
+            "CnH2n+2",
+            "CnH2n-2",
+            "CnH2nO2"
+        ],
+        "answer": "CnH2n+2",
+        "difficulty": "easy",
+        "explanation": "Alkanes are saturated hydrocarbons with the general formula CnH2n+2."
+    },
+    {
+        "prompt": "The bond angle in a linear molecule such as CO2 is:",
+        "options": [
+            "109.5°",
+            "120°",
+            "180°",
+            "90°"
+        ],
+        "answer": "180°",
+        "difficulty": "easy",
+        "explanation": "A linear molecule like CO2 has a bond angle of 180°."
+    },
+    {
+        "prompt": "Which hybridization corresponds to a trigonal planar shape?",
+        "options": [
+            "sp3",
+            "sp2",
+            "sp",
+            "dsp2"
+        ],
+        "answer": "sp2",
+        "difficulty": "easy",
+        "explanation": "sp2 hybridization results in a trigonal planar geometry with bond angles of 120°."
+    },
+    {
+        "prompt": "The functional group present in carboxylic acids is:",
+        "options": [
+            "-CHO",
+            "-COOH",
+            "-OH",
+            "-C=N"
+        ],
+        "answer": "-COOH",
+        "difficulty": "easy",
+        "explanation": "Carboxylic acids contain the carboxyl functional group, -COOH."
+    },
+    {
+        "prompt": "Which of the following is a physical property of alkanes?",
+        "options": [
+            "High reactivity towards acids",
+            "Insolubility in water",
+            "Presence of polar functional groups",
+            "Formation of coloured compounds"
+        ],
+        "answer": "Insolubility in water",
+        "difficulty": "easy",
+        "explanation": "Alkanes are non-polar and hydrophobic, making them insoluble in water."
+    },
+    {
+        "prompt": "The process used to separate an insoluble solid from a liquid is:",
+        "options": [
+            "Distillation",
+            "Filtration",
+            "Chromatography",
+            "Crystallization"
+        ],
+        "answer": "Filtration",
+        "difficulty": "easy",
+        "explanation": "Filtration is used to separate an insoluble solid from a liquid."
+    },
+    {
+        "prompt": "Which of the following is an aromatic hydrocarbon?",
+        "options": [
+            "Cyclohexane",
+            "Benzene",
+            "Ethene",
+            "Propane"
+        ],
+        "answer": "Benzene",
+        "difficulty": "easy",
+        "explanation": "Benzene is a classic example of an aromatic hydrocarbon."
+    },
+    {
+        "prompt": "The stability of benzene is due to:",
+        "options": [
+            "Resonance",
+            "Positive inductive effect",
+            "Negative inductive effect",
+            "Hydrogen bonding"
+        ],
+        "answer": "Resonance",
+        "difficulty": "medium",
+        "explanation": "Benzene is stabilized by the resonance of its delocalized π-electrons."
+    },
+    {
+        "prompt": "Which of the following is a use of boron compounds?",
+        "options": [
+            "Water softening",
+            "Making borosilicate glass",
+            "Neutralizing acids",
+            "Colouring fabrics"
+        ],
+        "answer": "Making borosilicate glass",
+        "difficulty": "medium",
+        "explanation": "Boron compounds, such as borax, are used in the manufacture of borosilicate glass."
+    },
+    {
+        "prompt": "Which type of spectroscopy is used to determine functional groups in organic compounds?",
+        "options": [
+            "UV-visible spectroscopy",
+            "Infrared spectroscopy",
+            "Mass spectroscopy",
+            "Atomic absorption spectroscopy"
+        ],
+        "answer": "Infrared spectroscopy",
+        "difficulty": "medium",
+        "explanation": "Infrared (IR) spectroscopy is used to identify functional groups based on their characteristic absorption frequencies."
+    },
+    {
+        "prompt": "The first step in Lassaigne's test is to:",
+        "options": [
+            "Add silver nitrate solution",
+            "Fuse the organic compound with sodium",
+            "Add ferrous sulfate",
+            "Boil the solution"
+        ],
+        "answer": "Fuse the organic compound with sodium",
+        "difficulty": "medium",
+        "explanation": "The first step in Lassaigne's test is to fuse the organic compound with sodium metal to convert heteroatoms into ionic compounds."
+    },
+    {
+        "prompt": "In chromatography, the stationary phase can be:",
+        "options": [
+            "Water",
+            "Silica gel",
+            "Oxygen gas",
+            "Ethanol"
+        ],
+        "answer": "Silica gel",
+        "difficulty": "easy",
+        "explanation": "Silica gel is a common solid stationary phase used in column and thin-layer chromatography."
+    },
+    {
+        "prompt": "The colour of nitrogen dioxide gas is:",
+        "options": [
+            "Colourless",
+            "Brown",
+            "Yellow",
+            "Green"
+        ],
+        "answer": "Brown",
+        "difficulty": "easy",
+        "explanation": "Nitrogen dioxide (NO2) is a brown gas."
+    },
+    {
+        "prompt": "Which gas is released when an acid reacts with a carbonate?",
+        "options": [
+            "Oxygen",
+            "Carbon dioxide",
+            "Nitrogen",
+            "Hydrogen"
+        ],
+        "answer": "Carbon dioxide",
+        "difficulty": "easy",
+        "explanation": "The reaction of an acid with a carbonate produces carbon dioxide gas."
+    },
+    {
+        "prompt": "Which of the following is a property of carbon nanotubes?",
+        "options": [
+            "Low electrical conductivity",
+            "High tensile strength",
+            "Low thermal conductivity",
+            "Brittle nature"
+        ],
+        "answer": "High tensile strength",
+        "difficulty": "medium",
+        "explanation": "Carbon nanotubes possess incredibly high tensile strength, making them one of the strongest materials known."
+    },
+    {
+        "prompt": "The hollow cage structure of fullerene makes it suitable for:",
+        "options": [
+            "Drug delivery",
+            "Water purification",
+            "Explosives",
+            "Fertilizer production"
+        ],
+        "answer": "Drug delivery",
+        "difficulty": "medium",
+        "explanation": "The hollow structure of fullerene allows it to encapsulate drug molecules."
+    },
+    {
+        "prompt": "Which separation technique is based on differences in boiling points?",
+        "options": [
+            "Filtration",
+            "Distillation",
+            "Chromatography",
+            "Precipitation"
+        ],
+        "answer": "Distillation",
+        "difficulty": "easy",
+        "explanation": "Distillation is a separation technique based on differences in the boiling points of the components in a mixture."
+    },
+    {
+        "prompt": "The hybridization of carbon in ethyne is:",
+        "options": [
+            "sp3",
+            "sp2",
+            "sp",
+            "dsp2"
+        ],
+        "answer": "sp",
+        "difficulty": "easy",
+        "explanation": "The carbon atoms in ethyne (acetylene) are sp hybridized."
+    },
+    {
+        "prompt": "Which of the following scientists proposed the structure of benzene?",
+        "options": [
+            "Kekule",
+            "Lavoisier",
+            "Boyle",
+            "Dalton"
+        ],
+        "answer": "Kekule",
+        "difficulty": "easy",
+        "explanation": "Friedrich August Kekulé proposed the structure of benzene as a six-membered ring with alternating single and double bonds."
+    },
+    {
+        "prompt": "The percentage composition method is used to determine:",
+        "options": [
+            "Empirical formula",
+            "Molecular formula",
+            "Structural formula",
+            "Condensed formula"
+        ],
+        "answer": "Empirical formula",
+        "difficulty": "medium",
+        "explanation": "Percentage composition is used to calculate the empirical formula of a compound."
+    },
+    {
+        "prompt": "Which of the following is a primary alcohol?",
+        "options": [
+            "1-propanol",
+            "2-propanol",
+            "2-methylpropan-2-ol",
+            "tert-butanol"
+        ],
+        "answer": "1-propanol",
+        "difficulty": "easy",
+        "explanation": "1-propanol has the hydroxyl group attached to a primary carbon, making it a primary alcohol."
+    },
+    {
+        "prompt": "Glucose is a type of?",
+        "options": [
+            "Polyhydric alcohol",
+            "Monohydric alcohol",
+            "Dihydric alcohol",
+            "Ketone"
+        ],
+        "answer": "Polyhydric alcohol",
+        "difficulty": "easy",
+        "explanation": "Glucose contains multiple hydroxyl (-OH) groups, classifying it as a polyhydric alcohol."
+    },
+    {
+        "prompt": "Ethers are mostly used for?",
+        "options": [
+            "Anaesthetic/solvent",
+            "Fuel",
+            "Explosives",
+            "Fertilizer"
+        ],
+        "answer": "Anaesthetic/solvent",
+        "difficulty": "easy",
+        "explanation": "Diethyl ether was historically used as an anesthetic and is still widely used as a solvent."
+    },
+    {
+        "prompt": "What is the IUPAC name of diethyl methyl methanol?",
+        "options": [
+            "3-ethylpentan-3-ol",
+            "2-methyl-2-ethylbutanol",
+            "3-methylpentan-3-ol",
+            "2-ethylbutan-2-ol"
+        ],
+        "answer": "3-methylpentan-3-ol",
+        "difficulty": "medium",
+        "explanation": "The parent chain is pentane with a methyl and hydroxyl group at position 3."
+    },
+    {
+        "prompt": "What is the IUPAC name of ethyl methyl propyl methane?",
+        "options": [
+            "2-ethyl-3-methylpentane",
+            "3-methyl-2-ethylpentane",
+            "2-methyl-3-ethylbutane",
+            "3-ethyl-2-methylpentane"
+        ],
+        "answer": "3-ethyl-2-methylpentane",
+        "difficulty": "medium",
+        "explanation": "The longest chain is pentane, with an ethyl at position 3 and a methyl at position 2."
+    },
+    {
+        "prompt": "Terminal alkynes react with?",
+        "options": [
+            "Sodium metal",
+            "Chlorine water",
+            "Bromine water",
+            "Sodium hydroxide"
+        ],
+        "answer": "Sodium metal",
+        "difficulty": "medium",
+        "explanation": "Terminal alkynes have an acidic hydrogen that can be replaced by sodium metal to form an alkynide salt."
+    },
+    {
+        "prompt": "Caesium belongs to which block of the periodic table?",
+        "options": [
+            "S block",
+            "P block",
+            "D block",
+            "F block"
+        ],
+        "answer": "S block",
+        "difficulty": "easy",
+        "explanation": "Caesium is in Group 1, which is part of the s-block."
+    },
+    {
+        "prompt": "Which of the following is an example of a dicarboxylic acid?",
+        "options": [
+            "Oxalic acid",
+            "Citric acid",
+            "Acetic acid",
+            "Formic acid"
+        ],
+        "answer": "Oxalic acid",
+        "difficulty": "easy",
+        "explanation": "Oxalic acid (HOOC-COOH) is the simplest dicarboxylic acid."
+    },
+    {
+        "prompt": "Which alkane is used for cooking?",
+        "options": [
+            "Methane",
+            "Butane",
+            "Propane",
+            "Ethane"
+        ],
+        "answer": "Propane",
+        "difficulty": "easy",
+        "explanation": "Propane is commonly used as a fuel for cooking, especially in portable gas stoves."
+    },
+    {
+        "prompt": "What is the IUPAC name of CH3OCH2CH3?",
+        "options": [
+            "Methoxyethane",
+            "Ethoxyethane",
+            "Methoxymethane",
+            "Ethoxypropane"
+        ],
+        "answer": "Methoxyethane",
+        "difficulty": "medium",
+        "explanation": "The compound is an ether with a methyl and an ethyl group, named methoxyethane."
+    },
+    {
+        "prompt": "What is the maximum number of electrons in the outermost orbit?",
+        "options": [
+            "2",
+            "8",
+            "18",
+            "32"
+        ],
+        "answer": "8",
+        "difficulty": "easy",
+        "explanation": "The outermost shell (valence shell) can hold a maximum of 8 electrons, following the octet rule."
+    },
+    {
+        "prompt": "The melting point across the transition series?",
+        "options": [
+            "Increases",
+            "Decreases",
+            "Increases, becomes constant, then decreases",
+            "Remains constant"
+        ],
+        "answer": "Increases, becomes constant, then decreases",
+        "difficulty": "medium",
+        "explanation": "Melting points in transition metals generally increase to a maximum in the middle of the series and then decrease."
+    },
+    {
+        "prompt": "Which transition element is colourless in solution?",
+        "options": [
+            "Iron",
+            "Copper",
+            "Manganese",
+            "Chromium"
+        ],
+        "answer": "Copper",
+        "difficulty": "medium",
+        "explanation": "Copper in its +1 oxidation state (Cu+) has a full d10 configuration and is colourless."
+    },
+    {
+        "prompt": "Which transition element has a fixed oxidation state of +2 only?",
+        "options": [
+            "Iron",
+            "Copper",
+            "Zinc",
+            "Manganese"
+        ],
+        "answer": "Zinc",
+        "difficulty": "medium",
+        "explanation": "Zinc has a full d-orbital and typically exhibits only a +2 oxidation state."
+    },
+    {
+        "prompt": "What is the reason for high enthalpy of atomization in transition series?",
+        "options": [
+            "Strong metallic bonding due to unpaired d-electrons",
+            "Large atomic radius",
+            "High ionization energy",
+            "Variable oxidation states"
+        ],
+        "answer": "Strong metallic bonding due to unpaired d-electrons",
+        "difficulty": "hard",
+        "explanation": "The presence of unpaired d-electrons contributes to strong metallic bonding, resulting in high enthalpy of atomization."
+    },
+    {
+        "prompt": "Among the 3d elements, the one that frequently forms compounds in +1 oxidation state is?",
+        "options": [
+            "Cu",
+            "Zn",
+            "Ti",
+            "Fe"
+        ],
+        "answer": "Cu",
+        "difficulty": "medium",
+        "explanation": "Copper commonly forms compounds in the +1 oxidation state (cuprous compounds)."
+    },
+    {
+        "prompt": "Ionization potential is lowest for?",
+        "options": [
+            "Alkali earth metals",
+            "Alkali metals",
+            "Halogens",
+            "Inert gases"
+        ],
+        "answer": "Alkali metals",
+        "difficulty": "easy",
+        "explanation": "Alkali metals have the lowest ionization potential because they have a single valence electron that is easily removed."
+    },
+    {
+        "prompt": "Which pair of elements exhibits almost the same atomic radii due to Lanthanoid contraction?",
+        "options": [
+            "Zr and Hf",
+            "Zr and Ac",
+            "Zr and Ta",
+            "Zr and Nb"
+        ],
+        "answer": "Zr and Hf",
+        "difficulty": "medium",
+        "explanation": "Lanthanoid contraction causes Zr and Hf to have very similar atomic radii."
+    },
+    {
+        "prompt": "How can you differentiate between an alkane and an alkene?",
+        "options": [
+            "Bromine water test",
+            "Litmus test",
+            "Flame test",
+            "Solubility test"
+        ],
+        "answer": "Bromine water test",
+        "difficulty": "easy",
+        "explanation": "Alkenes decolorize bromine water due to addition reaction, while alkanes do not."
+    },
+    {
+        "prompt": "Which element has the highest melting point among the transition series?",
+        "options": [
+            "Iron",
+            "Chromium",
+            "Tungsten (W)",
+            "Nickel"
+        ],
+        "answer": "Tungsten (W)",
+        "difficulty": "medium",
+        "explanation": "Tungsten has the highest melting point of all metals."
+    },
+    {
+        "prompt": "A molecule that forms a covalent bond with a neutral metal atom by donating a pair of electrons is called?",
+        "options": [
+            "Ligand",
+            "Complex",
+            "Coordinate",
+            "Chelate"
+        ],
+        "answer": "Ligand",
+        "difficulty": "easy",
+        "explanation": "A ligand is a molecule or ion that donates a pair of electrons to form a coordinate bond with a central metal atom."
+    },
+    {
+        "prompt": "The element with the electron configuration 1s2 2s2 2p6 3s2 is a?",
+        "options": [
+            "Metal",
+            "Metalloid",
+            "Non-metal",
+            "Noble gas"
+        ],
+        "answer": "Metal",
+        "difficulty": "medium",
+        "explanation": "The configuration is for magnesium (Mg), which is an alkaline earth metal."
+    },
+    {
+        "prompt": "Cyclohexanol and 1-cyclohexanol are what type of alcohol?",
+        "options": [
+            "Primary",
+            "Primary and secondary",
+            "Secondary and tertiary",
+            "Secondary"
+        ],
+        "answer": "Secondary",
+        "difficulty": "medium",
+        "explanation": "Both names likely refer to the same compound, cyclohexanol, which is a secondary alcohol."
+    },
+    {
+        "prompt": "Elements on the right-hand side of the periodic table are?",
+        "options": [
+            "Metalloids",
+            "Metals",
+            "Non-metals",
+            "Ferrous"
+        ],
+        "answer": "Non-metals",
+        "difficulty": "easy",
+        "explanation": "Elements on the right side of the periodic table are generally non-metals."
+    },
+    {
+        "prompt": "The dehydration of alcohol is due to what type of reaction?",
+        "options": [
+            "Substitution",
+            "Elimination",
+            "Addition",
+            "Oxidation"
+        ],
+        "answer": "Elimination",
+        "difficulty": "easy",
+        "explanation": "Dehydration of an alcohol is an elimination reaction where a water molecule is removed."
+    },
+    {
+        "prompt": "Which of the following carbonates is least stable?",
+        "options": [
+            "CaCO3",
+            "BaCO3",
+            "BeCO3",
+            "MgCO3"
+        ],
+        "answer": "BeCO3",
+        "difficulty": "medium",
+        "explanation": "Beryllium carbonate is the least stable due to the high polarizing power of the small Be2+ ion."
+    },
+    {
+        "prompt": "An atom of calcium (atomic number 20) contains how many electrons in the third energy level?",
+        "options": [
+            "10",
+            "18",
+            "8",
+            "2"
+        ],
+        "answer": "8",
+        "difficulty": "medium",
+        "explanation": "Calcium has an electron configuration of 2,8,8,2. The third energy level has 8 electrons."
+    },
+    {
+        "prompt": "Which hydrocarbon has the highest boiling point?",
+        "options": [
+            "Methane",
+            "Ethene",
+            "Octane",
+            "Butane"
+        ],
+        "answer": "Octane",
+        "difficulty": "easy",
+        "explanation": "Boiling points increase with molecular size and mass. Octane (C8H18) is the largest molecule and has the highest boiling point."
+    },
+    {
+        "prompt": "An element of atomic number 24 belongs to which block?",
+        "options": [
+            "S block",
+            "P block",
+            "D block",
+            "F block"
+        ],
+        "answer": "D block",
+        "difficulty": "easy",
+        "explanation": "Atomic number 24 is Chromium, which is a transition metal and belongs to the d-block."
+    },
+    {
+        "prompt": "The polymerization of ethylene gives?",
+        "options": [
+            "Polyethylene",
+            "Polypropylene",
+            "Polystyrene",
+            "Polyvinyl chloride"
+        ],
+        "answer": "Polyethylene",
+        "difficulty": "easy",
+        "explanation": "Polymerization of ethylene (ethene) yields polyethylene."
+    },
+    {
+        "prompt": "Addition of H2 to ethene in the presence of a catalyst gives?",
+        "options": [
+            "Ethane",
+            "Ethanol",
+            "Ethyne",
+            "Propane"
+        ],
+        "answer": "Ethane",
+        "difficulty": "easy",
+        "explanation": "Hydrogenation of ethene adds H2 across the double bond to form ethane."
+    },
+    {
+        "prompt": "Which of the following is most reactive?",
+        "options": [
+            "Alkane",
+            "Alkene",
+            "Alkynes",
+            "All equal"
+        ],
+        "answer": "Alkynes",
+        "difficulty": "medium",
+        "explanation": "Alkynes are generally more reactive than alkenes and alkanes due to the presence of a triple bond."
+    },
+    {
+        "prompt": "Which of the following is strongest among transition metals?",
+        "options": [
+            "W (Tungsten)",
+            "Zn",
+            "Fe",
+            "Cu"
+        ],
+        "answer": "W (Tungsten)",
+        "difficulty": "easy",
+        "explanation": "Tungsten is known for its extreme hardness and high tensile strength."
+    },
+    {
+        "prompt": "What is the highest oxidation number of manganese?",
+        "options": [
+            "+4",
+            "+5",
+            "+6",
+            "+7"
+        ],
+        "answer": "+7",
+        "difficulty": "medium",
+        "explanation": "Manganese can exhibit a maximum oxidation state of +7, as in permanganate (MnO4-)."
+    },
+    {
+        "prompt": "Which of the following is tert-butyl?",
+        "options": [
+            "Dimethyl ethyl",
+            "Isopropyl",
+            "1,1-dimethylethyl",
+            "Trimethylmethyl"
+        ],
+        "answer": "1,1-dimethylethyl",
+        "difficulty": "medium",
+        "explanation": "The tert-butyl group (t-butyl) is also known as 1,1-dimethylethyl."
+    },
+    {
+        "prompt": "Alkenes undergo which type of reaction?",
+        "options": [
+            "Substitution",
+            "Addition",
+            "Elimination",
+            "Oxidation only"
+        ],
+        "answer": "Addition",
+        "difficulty": "easy",
+        "explanation": "Alkenes characteristically undergo addition reactions due to the presence of a pi bond."
+    },
+    {
+        "prompt": "Why are transition metals coloured?",
+        "options": [
+            "Due to d-d electron transitions",
+            "Due to high melting point",
+            "Due to variable atomic mass",
+            "Due to metallic bonding"
+        ],
+        "answer": "Due to d-d electron transitions",
+        "difficulty": "medium",
+        "explanation": "Transition metal complexes are colored because of d-d electron transitions that absorb visible light."
+    },
+    {
+        "prompt": "An element with atomic number 55 belongs to which block?",
+        "options": [
+            "S block",
+            "P block",
+            "D block",
+            "F block"
+        ],
+        "answer": "S block",
+        "difficulty": "easy",
+        "explanation": "Atomic number 55 is Caesium, an alkali metal in Group 1, which is in the s-block."
+    },
+    {
+        "prompt": "Which of the following is diamagnetic?",
+        "options": [
+            "Zn",
+            "Fe",
+            "Cu",
+            "Mn"
+        ],
+        "answer": "Zn",
+        "difficulty": "medium",
+        "explanation": "Zinc has a completely filled d-orbital (d10), so all its electrons are paired, making it diamagnetic."
+    },
+    {
+        "prompt": "Which hydrocarbon is used for ripening fruit?",
+        "options": [
+            "Methane",
+            "Ethane",
+            "Ethylene (Ethene)",
+            "Propane"
+        ],
+        "answer": "Ethylene (Ethene)",
+        "difficulty": "easy",
+        "explanation": "Ethylene (ethene) is a plant hormone used to ripen fruit."
+    },
+    {
+        "prompt": "Polymerization of propylene gives?",
+        "options": [
+            "Polyethylene",
+            "Polypropylene",
+            "Polystyrene",
+            "Nylon"
+        ],
+        "answer": "Polypropylene",
+        "difficulty": "easy",
+        "explanation": "Polymerization of propylene (propene) yields polypropylene."
+    },
+    {
+        "prompt": "Successive members of a homologous series exhibit which of the following?",
+        "options": [
+            "I, II, III",
+            "II, III, IV",
+            "I, II, IV",
+            "All of the above"
+        ],
+        "answer": "I, II, IV",
+        "difficulty": "medium",
+        "explanation": "Members of a homologous series differ by a CH2 unit, have a general formula, and show similar chemical properties."
+    },
+    {
+        "prompt": "Which of the following is NOT in the 1st transition series?",
+        "options": [
+            "Ag",
+            "Cd",
+            "Cr",
+            "Ni"
+        ],
+        "answer": "Ag",
+        "difficulty": "easy",
+        "explanation": "Silver (Ag) is in the 2nd transition series, not the 1st."
+    },
+    {
+        "prompt": "How can alcohol be prepared?",
+        "options": [
+            "Reduction of alkenes",
+            "Reduction of aldehydes",
+            "Both",
+            "None"
+        ],
+        "answer": "Both",
+        "difficulty": "medium",
+        "explanation": "Alcohols can be prepared by the reduction of aldehydes or ketones, and also by the hydration of alkenes."
+    },
+    {
+        "prompt": "The interatomic bonding in transition metals is enhanced due to?",
+        "options": [
+            "Van der Waals forces",
+            "P-P overlap",
+            "Involvement of unpaired d-electrons in metallic bonding",
+            "Ionic bonds"
+        ],
+        "answer": "Involvement of unpaired d-electrons in metallic bonding",
+        "difficulty": "hard",
+        "explanation": "The unpaired d-electrons in transition metals contribute to stronger metallic bonding."
+    },
+    {
+        "prompt": "Decarboxylation of ethanoic acid gives?",
+        "options": [
+            "Methane",
+            "Ethane",
+            "CO2",
+            "Propane"
+        ],
+        "answer": "Methane",
+        "difficulty": "medium",
+        "explanation": "Decarboxylation of ethanoic acid (CH3COOH) removes CO2 to form methane (CH4)."
+    },
+    {
+        "prompt": "What is the structure of 2,3-dimethylpent-3-oi acid? Which families of organic compounds are carbonyl-containing groups?",
+        "options": [
+            "Alcohol, amides, esters, alkanoic acids",
+            "Alkanones, alkanamides, esters, alkanoyl halides",
+            "Alkenes, alkynes, aldehydes, ketones",
+            "Ethers, amines, alkanes, alkenes"
+        ],
+        "answer": "Alkanones, alkanamides, esters, alkanoyl halides",
+        "difficulty": "medium",
+        "explanation": "These functional groups all contain a carbonyl (C=O) group."
+    },
+    {
+        "prompt": "Transition metals have high enthalpy of atomization due to?",
+        "options": [
+            "Large atomic size",
+            "Strong metallic bonding due to unpaired d-electrons",
+            "High electron affinity",
+            "Low ionization energy"
+        ],
+        "answer": "Strong metallic bonding due to unpaired d-electrons",
+        "difficulty": "medium",
+        "explanation": "Strong metallic bonding, resulting from the presence of unpaired d-electrons, leads to high enthalpy of atomization."
+    },
+    {
+        "prompt": "Which is used in oxyacetylene welding?",
+        "options": [
+            "Ethane",
+            "Propane",
+            "Acetylene (Ethyne)",
+            "Butane"
+        ],
+        "answer": "Acetylene (Ethyne)",
+        "difficulty": "easy",
+        "explanation": "Acetylene (ethyne) is used in oxyacetylene welding for its high combustion temperature."
+    },
+    {
+        "prompt": "Atomic radii increase across the transition period and then become constant with the last 5 due to?",
+        "options": [
+            "Balance of effective nuclear charge and screening effect",
+            "Variable oxidation state",
+            "Stability of atoms",
+            "Electron configuration"
+        ],
+        "answer": "Balance of effective nuclear charge and screening effect",
+        "difficulty": "hard",
+        "explanation": "The balance between increasing nuclear charge and the screening effect causes atomic radii to initially decrease then remain constant."
+    },
+    {
+        "prompt": "Ethers have the formula?",
+        "options": [
+            "RCOOH",
+            "RCOX",
+            "ROR'",
+            "RCOR'"
+        ],
+        "answer": "ROR'",
+        "difficulty": "easy",
+        "explanation": "Ethers have the general formula R-O-R'."
+    },
+    {
+        "prompt": "The decarboxylation of C6H13COOH gives?",
+        "options": [
+            "Cyclohexane",
+            "Glucose",
+            "Heptane",
+            "Hexane"
+        ],
+        "answer": "Heptane",
+        "difficulty": "medium",
+        "explanation": "Decarboxylation of C6H13COOH removes CO2, leaving a heptane (C7H16) derivative."
+    },
+    {
+        "prompt": "Which of the following has the lowest ionization potential?",
+        "options": [
+            "Alkaline metals",
+            "Inert gases",
+            "Halogens",
+            "Alkaline earth metals"
+        ],
+        "answer": "Alkaline metals",
+        "difficulty": "easy",
+        "explanation": "Alkali metals have the lowest ionization potential."
+    },
+    {
+        "prompt": "Which of the following has the highest melting point?",
+        "options": [
+            "NaCl",
+            "NaF",
+            "NaBr",
+            "NaI"
+        ],
+        "answer": "NaF",
+        "difficulty": "medium",
+        "explanation": "Melting points of ionic solids increase with the strength of the ionic bond, which is highest for NaF due to the small size of F-."
+    },
+    {
+        "prompt": "Which Fe ion is more stable?",
+        "options": [
+            "Fe2+",
+            "Fe3+",
+            "Both equal",
+            "Fe4+"
+        ],
+        "answer": "Fe3+",
+        "difficulty": "medium",
+        "explanation": "Fe3+ has a half-filled d5 configuration, which is more stable than the d6 configuration of Fe2+."
+    },
+    {
+        "prompt": "Which of the following has the highest boiling point?",
+        "options": [
+            "Ethane",
+            "Octane",
+            "Butane",
+            "Methane"
+        ],
+        "answer": "Octane",
+        "difficulty": "easy",
+        "explanation": "Boiling point increases with molecular mass. Octane is the largest molecule and has the highest boiling point."
+    },
+    {
+        "prompt": "Through the period, alkali metals have?",
+        "options": [
+            "Smallest atomic size",
+            "Lower ionization energy",
+            "Highest electron affinity",
+            "Highest electronegativity"
+        ],
+        "answer": "Lower ionization energy",
+        "difficulty": "medium",
+        "explanation": "Alkali metals have the lowest ionization energies in their respective periods."
+    },
+    {
+        "prompt": "Methanol has higher solubility than 1-butanol because?",
+        "options": [
+            "None of the above",
+            "Methanol forms hydrogen bonds with water via OH group",
+            "The carbon to hydrogen ratio",
+            "Methanol is lighter"
+        ],
+        "answer": "Methanol forms hydrogen bonds with water via OH group",
+        "difficulty": "medium",
+        "explanation": "Methanol's smaller alkyl group allows it to form more effective hydrogen bonds with water, increasing its solubility."
+    },
+    {
+        "prompt": "An element with atomic number 24 is in which block of the periodic table?",
+        "options": [
+            "S",
+            "P",
+            "D",
+            "F"
+        ],
+        "answer": "D",
+        "difficulty": "easy",
+        "explanation": "Atomic number 24 is Chromium, a d-block element."
+    },
+    {
+        "prompt": "Caesium is in what block of the periodic table?",
+        "options": [
+            "S",
+            "P",
+            "D",
+            "F"
+        ],
+        "answer": "S",
+        "difficulty": "easy",
+        "explanation": "Caesium is in the s-block."
+    },
+    {
+        "prompt": "What is made of a carbonyl group and an alkoxy group?",
+        "options": [
+            "Ester",
+            "Carboxylic acid",
+            "Amide",
+            "Amine"
+        ],
+        "answer": "Ester",
+        "difficulty": "medium",
+        "explanation": "An ester is formed from a carbonyl group and an alkoxy group (R-COO-R')."
+    },
+    {
+        "prompt": "Tert-butyl is a?",
+        "options": [
+            "Aliphatic",
+            "Mixed",
+            "Cyclic",
+            "Aromatic"
+        ],
+        "answer": "Aliphatic",
+        "difficulty": "medium",
+        "explanation": "The tert-butyl group is an aliphatic alkyl group."
+    },
+    {
+        "prompt": "An element with a mass number of 31 and atomic number of 15 has how many neutrons?",
+        "options": [
+            "31",
+            "15",
+            "16",
+            "12"
+        ],
+        "answer": "16",
+        "difficulty": "medium",
+        "explanation": "Number of neutrons = Mass number - Atomic number = 31 - 15 = 16."
+    },
+    {
+        "prompt": "What is the highest number of electrons that the outermost shell of an atom can hold?",
+        "options": [
+            "2",
+            "8",
+            "18",
+            "32"
+        ],
+        "answer": "8",
+        "difficulty": "easy",
+        "explanation": "The outermost shell (valence shell) can hold a maximum of 8 electrons."
+    },
+    {
+        "prompt": "Which of the following is NOT a property of a functional group?",
+        "options": [
+            "Atom",
+            "Covalent bond",
+            "Methyl or methylene group",
+            "Ions"
+        ],
+        "answer": "Methyl or methylene group",
+        "difficulty": "medium",
+        "explanation": "Methyl or methylene groups are not functional groups; they are alkyl substituents."
+    },
+    {
+        "prompt": "Reaction of cyclopropanol with sodium dichromate gives?",
+        "options": [
+            "Cyclopropanone",
+            "Cyclopropanal",
+            "Cyclopropane",
+            "Propanoic acid"
+        ],
+        "answer": "Cyclopropanone",
+        "difficulty": "medium",
+        "explanation": "Oxidation of a secondary alcohol like cyclopropanol with sodium dichromate yields a ketone, cyclopropanone."
+    },
+    {
+        "prompt": "Alkanes can only undergo which reaction?",
+        "options": [
+            "Addition",
+            "Oxidation",
+            "Substitution",
+            "Elimination"
+        ],
+        "answer": "Substitution",
+        "difficulty": "medium",
+        "explanation": "Alkanes primarily undergo substitution reactions (e.g., halogenation) and combustion."
+    },
+    {
+        "prompt": "Which of the following is NOT a characteristic of transition metals?",
+        "options": [
+            "High melting point",
+            "Low melting point",
+            "Variable oxidation states",
+            "Coloured compounds"
+        ],
+        "answer": "Low melting point",
+        "difficulty": "easy",
+        "explanation": "Transition metals generally have high melting points due to strong metallic bonding."
+    },
+    {
+        "prompt": "Phenyl methyl ether is an example of?",
+        "options": [
+            "Aromatic ether",
+            "Secondary ether",
+            "Simple ether",
+            "Aliphatic ether"
+        ],
+        "answer": "Aromatic ether",
+        "difficulty": "medium",
+        "explanation": "Phenyl methyl ether (anisole) contains an aromatic ring attached to the oxygen, making it an aromatic ether."
+    },
+    {
+        "prompt": "CH3- CH2=CH2- CH3 is named?",
+        "options": [
+            "2-Butene",
+            "Butane",
+            "1-Butene",
+            "But-1-ene"
+        ],
+        "answer": "2-Butene",
+        "difficulty": "medium",
+        "explanation": "The longest chain is butane with a double bond between C2 and C3, so it is 2-butene."
+    },
+    {
+        "prompt": "What is the IUPAC name of ethyl dimethyl methanol?",
+        "options": [
+            "2-methylbutan-2-ol",
+            "2-ethylpropan-2-ol",
+            "2-methyl-2-butanol",
+            "2-ethyl-2-propanol"
+        ],
+        "answer": "2-methylbutan-2-ol",
+        "difficulty": "medium",
+        "explanation": "The compound is an alcohol with a methyl and an ethyl group on the same carbon, making it 2-methylbutan-2-ol."
+    },
+    {
+        "prompt": "Product formed when pentan-1-ol is oxidized with sodium dichromate is?",
+        "options": [
+            "Propanoic acid",
+            "Propanal",
+            "Pentanoic acid",
+            "Pentanal"
+        ],
+        "answer": "Pentanoic acid",
+        "difficulty": "medium",
+        "explanation": "Complete oxidation of a primary alcohol like pentan-1-ol with sodium dichromate yields a carboxylic acid, pentanoic acid."
+    },
+    {
+        "prompt": "Properties that make transition metals good reducing agents?",
+        "options": [
+            "They are metals",
+            "Low ionization energy",
+            "Variable oxidation states",
+            "High melting point"
+        ],
+        "answer": "Variable oxidation states",
+        "difficulty": "medium",
+        "explanation": "The ability to exist in multiple oxidation states allows transition metals to act as good reducing agents."
+    },
+    {
+        "prompt": "Which property of transition metals increases and then becomes constant across the series?",
+        "options": [
+            "Atomic radius",
+            "Melting point",
+            "Ionization energy",
+            "Electronegativity"
+        ],
+        "answer": "Atomic radius",
+        "difficulty": "hard",
+        "explanation": "Atomic radius decreases initially and then becomes fairly constant due to the balance of nuclear charge and screening effect."
+    },
+    {
+        "prompt": "Element with atomic number 55 is in which group?",
+        "options": [
+            "Group 1",
+            "Group 2",
+            "Group 7",
+            "Group 17"
+        ],
+        "answer": "Group 1",
+        "difficulty": "easy",
+        "explanation": "Atomic number 55 is Caesium, which is in Group 1."
+    },
+    {
+        "prompt": "IUPAC name of tert-butyl group?",
+        "options": [
+            "1,1-dimethylethyl",
+            "Isopropyl",
+            "Neopentyl",
+            "2-methylpropyl"
+        ],
+        "answer": "1,1-dimethylethyl",
+        "difficulty": "medium",
+        "explanation": "The tert-butyl group is systematically named 1,1-dimethylethyl."
+    },
+    {
+        "prompt": "Give correct IUPAC name for Ethyl Methyl Propyl Methane.",
+        "options": [
+            "2-ethyl-3-methylbutane",
+            "3-methyl-2-ethylpentane",
+            "2-methyl-3-ethylbutane",
+            "3-ethyl-2-methylpentane"
+        ],
+        "answer": "3-ethyl-2-methylpentane",
+        "difficulty": "medium",
+        "explanation": "The longest chain is pentane, with an ethyl group at 3 and a methyl group at 2."
+    },
+    {
+        "prompt": "Name 2,4-diethyl pent-2-ene-4-ol correctly.",
+        "options": [
+            "4-ol-2,4-diethylpent-2-ene",
+            "2,4-diethylpent-2-en-4-ol",
+            "Pent-2-en-4-ol-2,4-diethyl",
+            "2,4-diethyl-4-hydroxypent-2-ene"
+        ],
+        "answer": "2,4-diethylpent-2-en-4-ol",
+        "difficulty": "hard",
+        "explanation": "The IUPAC name is written with the parent chain and substituents, including the suffix for the principal functional group."
+    },
+    {
+        "prompt": "A student mistakenly pours water into a bottle containing dichloromethane in a lab. Give the suitable separating technique.",
+        "options": [
+            "Distillation",
+            "Evaporation",
+            "Separating funnel",
+            "Chromatography"
+        ],
+        "answer": "Separating funnel",
+        "difficulty": "easy",
+        "explanation": "Dichloromethane and water are immiscible liquids, so a separating funnel is used to separate them."
+    },
+    {
+        "prompt": "Which of this transition series element has +7 oxidation number?",
+        "options": [
+            "Mn",
+            "Zn",
+            "Fe",
+            "Sc"
+        ],
+        "answer": "Mn",
+        "difficulty": "medium",
+        "explanation": "Manganese can reach a +7 oxidation state."
+    },
+    {
+        "prompt": "Which of these has a +1 oxidation state?",
+        "options": [
+            "Cu",
+            "Co",
+            "Ni",
+            "Sc"
+        ],
+        "answer": "Cu",
+        "difficulty": "medium",
+        "explanation": "Copper is well-known for its +1 oxidation state."
+    },
+    {
+        "prompt": "Boiling point across transition metals?",
+        "options": [
+            "Increases",
+            "Increases, then remains constant",
+            "Decreases",
+            "Decreases then increases"
+        ],
+        "answer": "Increases, then remains constant",
+        "difficulty": "medium",
+        "explanation": "Boiling point generally increases across a transition series and then levels off or remains constant."
+    },
+    {
+        "prompt": "A mixture of aniline and chloroform can best be separated by?",
+        "options": [
+            "Steam distillation",
+            "Simple distillation",
+            "Vacuum distillation",
+            "Fractional distillation"
+        ],
+        "answer": "Steam distillation",
+        "difficulty": "medium",
+        "explanation": "Aniline is steam volatile and can be separated from chloroform, which is not, using steam distillation."
+    },
+    {
+        "prompt": "A mixture of two liquids of close boiling point can be separated by?",
+        "options": [
+            "Vacuum distillation",
+            "Simple distillation",
+            "Fractional distillation",
+            "Differential extraction"
+        ],
+        "answer": "Fractional distillation",
+        "difficulty": "easy",
+        "explanation": "Fractional distillation is used to separate liquids with close boiling points."
+    },
+    {
+        "prompt": "A mixture of two liquids where one has a high boiling point and the other decomposes at temperature below its boiling point is separated by?",
+        "options": [
+            "Vacuum distillation",
+            "Steam distillation",
+            "Differential extraction",
+            "Fractional distillation"
+        ],
+        "answer": "Vacuum distillation",
+        "difficulty": "medium",
+        "explanation": "Vacuum distillation is used to separate and purify liquids that decompose at their normal boiling points by lowering the pressure."
+    },
+    {
+        "prompt": "Give the IUPAC name of the structure shown below:",
+        "options": [
+            "5,7-dichloro-6-methylhept-4-ene-2-yne",
+            "3,5-dichloro-4-methylhept-3-ene-1-yne",
+            "1,3-dichloro-2-methylhept-4-ene-6-yne",
+            "5,7-dichloro-6-methylhept-2-ene-4-yne"
+        ],
+        "answer": "5,7-dichloro-6-methylhept-4-ene-2-yne",
+        "difficulty": "hard",
+        "explanation": "The chain is numbered to give the lowest locants for the double bond, triple bond, and substituents."
+    },
+    {
+        "prompt": "Give the IUPAC name of the structure shown below:",
+        "options": [
+            "2-ethyl-4-methylpent-1-ene",
+            "2-methyl-4-ethylpent-1-ene",
+            "3-ethyl-5-methylhex-1-ene",
+            "2-ethyl-4-methylpentane"
+        ],
+        "answer": "3-ethyl-5-methylhex-1-ene",
+        "difficulty": "hard",
+        "explanation": "The longest chain is a hexene, with an ethyl group at 3 and a methyl group at 5."
+    }
+]
