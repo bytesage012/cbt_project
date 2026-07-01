@@ -7,12 +7,18 @@ export async function POST(request: Request) {
 
   try {
     body = await request.json();
-  } catch (error) {
-    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+  } catch {
+    return NextResponse.json(
+      { error: 'Invalid JSON body' },
+      { status: 400 }
+    );
   }
 
   if (!Array.isArray(body.questions)) {
-    return NextResponse.json({ error: 'Payload must include a questions array' }, { status: 400 });
+    return NextResponse.json(
+      { error: 'Payload must include a questions array' },
+      { status: 400 }
+    );
   }
 
   type QuestionUploadItem = {
@@ -25,11 +31,12 @@ export async function POST(request: Request) {
   };
 
   const data: QuestionUploadItem[] = body.questions.map((q: any) => {
-    const options = typeof q.options === 'string'
-      ? q.options
-      : Array.isArray(q.options)
-      ? JSON.stringify(q.options)
-      : JSON.stringify([]);
+    const options =
+      typeof q.options === 'string'
+        ? q.options
+        : Array.isArray(q.options)
+        ? JSON.stringify(q.options)
+        : JSON.stringify([]);
 
     return {
       prompt: String(q.prompt ?? '').trim(),
@@ -41,41 +48,82 @@ export async function POST(request: Request) {
     };
   });
 
-  const invalidItem = data.find((item: QuestionUploadItem) => !item.prompt || !item.options || Number.isNaN(item.courseId));
+  const invalidItem = data.find(
+    (item) =>
+      !item.prompt ||
+      !item.options ||
+      Number.isNaN(item.courseId)
+  );
+
   if (invalidItem) {
-    return NextResponse.json({ error: 'One or more uploaded questions are missing required fields or have an invalid courseId' }, { status: 400 });
+    return NextResponse.json(
+      {
+        error:
+          'One or more uploaded questions are missing required fields or have an invalid courseId',
+      },
+      { status: 400 }
+    );
   }
 
   const supabase = await createClient();
 
   async function tryInsert(table: string) {
-    return await supabase.from(table).insert(data, { returning: 'minimal' });
+    return await supabase.from(table).insert(data);
   }
 
   let insertResult = await tryInsert('questions');
+
   if (insertResult.error) {
     const message = String(insertResult.error.message || 'Unknown upload error');
-    if (message.includes('returned row structure does not match the structure of the triggering table')) {
-      // Try the alternative table name if the schema may use a different casing.
+
+    if (
+      message.includes(
+        'returned row structure does not match the structure of the triggering table'
+      )
+    ) {
       insertResult = await tryInsert('Question');
     }
   }
 
   if (insertResult.error) {
     const message = String(insertResult.error.message || 'Unknown upload error');
-    if (message.includes('returned row structure does not match the structure of the triggering table')) {
+
+    if (
+      message.includes(
+        'returned row structure does not match the structure of the triggering table'
+      )
+    ) {
       let insertedCount = 0;
+
       for (const row of data) {
-        const { error: rowError } = await supabase.from('Question').insert(row, { returning: 'minimal' });
+        const { error: rowError } = await supabase
+          .from('Question')
+          .insert(row);
+
         if (rowError) {
-          return NextResponse.json({ error: `Bulk upload failed at row ${insertedCount + 1}: ${rowError.message}` }, { status: 500 });
+          return NextResponse.json(
+            {
+              error: `Bulk upload failed at row ${
+                insertedCount + 1
+              }: ${rowError.message}`,
+            },
+            { status: 500 }
+          );
         }
-        insertedCount += 1;
+
+        insertedCount++;
       }
+
       return NextResponse.json({ inserted: insertedCount });
     }
 
-    return NextResponse.json({ error: message, details: insertResult.error.details ?? null }, { status: 500 });
+    return NextResponse.json(
+      {
+        error: message,
+        details: insertResult.error.details ?? null,
+      },
+      { status: 500 }
+    );
   }
 
   return NextResponse.json({ inserted: data.length });
